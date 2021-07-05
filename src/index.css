@@ -16,4 +16,13 @@
     font-family: Inconsolata;
     src: url(./fonts/Inconsolata-VariableFont.ttf) format("truetype");
   }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  .btn {
+    @apply rounded-full p-3;
+  }
 }

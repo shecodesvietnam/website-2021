@@ -8,6 +8,7 @@ import { configLanguage, languageBasedDisplay } from "./../utils/language";
 import { simplify } from "./../utils/text";
 import NextArrow from "../components/sliders/NextArrow";
 import PrevArrow from "./../components/sliders/PrevArrow";
+import Button from "./../components/layout/Button";
 
 const contents = {
   intro: {
@@ -254,52 +255,87 @@ const contents = {
 
 const readMore = configLanguage("Đọc thêm", "Read More");
 
-function Homepage() {
+function Homepage({ history }) {
   const languageContext = useContext(LanguageContext);
+
+  function moveToHackathonPage() {
+    history.push("/hackathon");
+  }
 
   return (
     <>
-      <article>
-        <img
-          className="w-full h-auto"
-          src={`${assetsUrl}/2021/commons/hackathon-backgroundtrang.png`}
-          alt="intro"
-        />
-      </article>
-      <article
-        className="
-        bg-white 
-        px-4
-        sm:px-28 
-        py-16 
-        2xl:grid 
-        2xl:grid-cols-2 
-        gap-10 
-        2xl:items-center"
-      >
-        <header className="mb-5 2xl:mb-0 2xl:flex 2xl:justify-end">
-          <h2 className="text-center 2xl:text-right font-title 2xl:w-2/3">
-            <span className="block tracking-widest mb-3 text-5xl 2xl:text-6xl font-title">
+      <article className="bg-light px-2 lg:px-20 xl:px-28 py-16 mb-2">
+        <header className="mb-16">
+          <h2 className="text-center font-title">
+            <span className="block tracking-widest mb-3 text-4xl sm:text-6xl font-title">
               SheCodes Vietnam
             </span>
-            <div className="2xl:flex 2xl:justify-end">
-              <span className="block leading-tight text-4xl">
-                {languageBasedDisplay(
-                  contents.intro.header.subtitle,
-                  languageContext.lang
-                )}
-              </span>
-            </div>
+            <span className="block leading-tight text-2xl sm:text-4xl">
+              {languageBasedDisplay(
+                contents.intro.header.subtitle,
+                languageContext.lang
+              )}
+            </span>
           </h2>
         </header>
-        <p className="text-lg 2xl:text-2xl text-justify 2xl:w-2/3 mt-10 2xl:mt-0">
+        <p className="text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
           {languageBasedDisplay(
             contents.intro.description,
             languageContext.lang
           )}
         </p>
+        <div className="mt-16 flex justify-center">
+          <Button onClick={moveToHackathonPage}>
+            {languageBasedDisplay(
+              configLanguage("Tham gia Hackathon", "Join Hackathon"),
+              languageContext.lang
+            )}
+          </Button>
+        </div>
       </article>
-      <article className="px-2 py-2 lg:grid lg:grid-cols-2 lg:gap-2 lg:items-center">
+      <article className="pt-32 py-5 bg-black">
+        <h3 className="text-center text-5xl leading-tight sm:leading-none px-2 lg:px-0 font-semibold text-gray-50">
+          {languageBasedDisplay(
+            configLanguage(
+              `Đôi Lời Chia Sẻ Từ Những Nhà Sáng Lập`,
+              `A Few Thoughts From Our Founders`
+            ),
+            languageContext.lang
+          )}
+        </h3>
+        <Slider
+          dots={false}
+          infinite
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          className="w-5/6 lg:w-3/4 mx-auto"
+        >
+          {Object.keys(contents.founderQuotes).map((key, index) => (
+            <figure key={index} className="text-center">
+              <div className="py-12 px-6">
+                <img
+                  className="block rounded-full mx-auto w-36 h-36 mb-5"
+                  src={contents.founderQuotes[key].imgSrc}
+                  alt={key}
+                />
+                <blockquote className="mb-4 text-2xl">
+                  <p className="text-gray-50">
+                    {languageBasedDisplay(
+                      contents.founderQuotes[key].text,
+                      languageContext.lang
+                    )}
+                  </p>
+                </blockquote>
+                <figcaption className="mb-2 italic text-lg text-gray-50">
+                  - {contents.founderQuotes[key].fullCaption}
+                </figcaption>
+              </div>
+            </figure>
+          ))}
+        </Slider>
+      </article>
+      <article className="px-2 pt-2 lg:grid lg:grid-cols-2 lg:gap-2 lg:items-center">
         {Object.keys(contents.programs).map((key, index) => (
           <section key={index} className="relative group mb-2 lg:mb-0">
             <img
@@ -328,7 +364,7 @@ function Homepage() {
                 opacity-0 
                 group-hover:opacity-100 
                 transform 
-                group-hover:bg-gray-900 
+                group-hover:bg-black
                 group-hover:bg-opacity-60
               "
             >
@@ -370,81 +406,37 @@ function Homepage() {
           </p>
         </section>
       </article>
-      <article className="pt-32 py-5 bg-gray-900">
-        <h3 className="text-center text-5xl leading-tight sm:leading-none px-2 lg:px-0 font-semibold text-gray-50">
-          {languageBasedDisplay(
-            configLanguage(
-              `Đôi Lời Chia Sẻ Từ Những Nhà Sáng Lập Của SheCodes Vietnam`,
-              `A Few Thoughts From Our Founders`
-            ),
-            languageContext.lang
-          )}
-        </h3>
-        <Slider
-          dots={false}
-          infinite
-          speed={500}
-          slidesToShow={1}
-          slidesToScroll={1}
-          className="w-5/6 lg:w-3/4 mx-auto"
-        >
-          {Object.keys(contents.founderQuotes).map((key, index) => (
-            <figure key={index} className="text-center">
-              <div className="py-12 px-6">
-                <img
-                  className="block rounded-full mx-auto w-36 h-36 mb-5"
-                  src={contents.founderQuotes[key].imgSrc}
-                  alt={key}
-                />
-                <blockquote className="mb-4 text-2xl">
-                  <p className="text-gray-50">
-                    {languageBasedDisplay(
-                      contents.founderQuotes[key].text,
-                      languageContext.lang
-                    )}
-                  </p>
-                </blockquote>
-                <figcaption className="mb-2 italic text-lg text-gray-50">
-                  - {contents.founderQuotes[key].fullCaption}
-                </figcaption>
-              </div>
-            </figure>
-          ))}
-        </Slider>
-      </article>
       <article
-        className="mt-2 py-32 sm:grid sm:grid-cols-2 text-gray-50"
+        className="mb-2"
         style={{
-          backgroundImage: `linear-gradient(
-          to right bottom,
-          rgba(22, 22, 22, 0.75),
-          rgba(22, 22, 22, 0.75)
-        ), url("${assetsUrl}/2020/media/homepage-secondary.png")`,
+          backgroundImage: `url("${assetsUrl}/2020/media/homepage-secondary.png")`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <header className="col-span-full mb-20">
-          <h3 className="text-center px-2 lg:px-0 leading-tight sm:leading-none text-5xl font-semibold">
-            {languageBasedDisplay(
-              configLanguage(
-                `Những Con Số Qua Từng Năm`,
-                `The Numbers Throughout The Years`
-              ),
-              languageContext.lang
-            )}
-          </h3>
-        </header>
-        {contents.theNumbers.map((theNumber, index) => (
-          <section key={index} className="text-center mb-12 w-2/3 mx-auto">
-            <p className="text-6xl">{theNumber.quantity}</p>
-            <p className="text-2xl w-2/3 mx-auto">
-              {languageBasedDisplay(theNumber.title, languageContext.lang)}
-            </p>
-          </section>
-        ))}
+        <div className="bg-black bg-opacity-60 w-full h-auto mt-2 py-32 sm:grid sm:grid-cols-2 text-gray-50">
+          <header className="col-span-full mb-20">
+            <h3 className="text-center px-2 lg:px-0 leading-tight sm:leading-none text-5xl font-semibold">
+              {languageBasedDisplay(
+                configLanguage(
+                  `Những Con Số Qua Từng Năm`,
+                  `The Numbers Throughout The Years`
+                ),
+                languageContext.lang
+              )}
+            </h3>
+          </header>
+          {contents.theNumbers.map((theNumber, index) => (
+            <section key={index} className="text-center mb-12 w-2/3 mx-auto">
+              <p className="text-6xl">{theNumber.quantity}</p>
+              <p className="text-2xl w-2/3 mx-auto">
+                {languageBasedDisplay(theNumber.title, languageContext.lang)}
+              </p>
+            </section>
+          ))}
+        </div>
       </article>
-      <article className="py-32">
+      <article className="py-32 bg-light">
         <header className="col-span-full mb-20">
           <h3 className="text-center text-5xl px-2 lg:px-0 leading-tight sm:leading-none font-semibold">
             {languageBasedDisplay(

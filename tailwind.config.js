@@ -13,6 +13,7 @@ module.exports = {
         illusion: "#f39bbd",
         ruby: "#e91f6f",
         governor: "#5056a1",
+        light: "#fbfbfd",
       },
     },
   },
