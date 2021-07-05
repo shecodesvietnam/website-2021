@@ -3,7 +3,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {},
+      fontFamily: {
+        title: ["MajorMonoDisplay"],
+        text: ["Inconsolata"],
+      },
+      colors: {
+        malibu: "#55a9dd",
+        lavender: "#c7c3da",
+        illusion: "#f39bbd",
+        ruby: "#e91f6f",
+        governor: "#5056a1",
+      },
     },
   },
   variants: {

@@ -1,4 +1,19 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 /* ./src/index.css */
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@layer base {
+  @font-face {
+    font-family: MajorMonoDisplay;
+    src: url(./fonts/MajorMonoDisplay-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: Inconsolata;
+    src: url(./fonts/Inconsolata-VariableFont.ttf) format("truetype");
+  }
+}

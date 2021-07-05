@@ -9,7 +9,8 @@ import TalentConnector from "./pages/TalentConnector";
 import Mentorship from "./pages/Mentorship";
 import Webinar from "./pages/Webinar";
 import About from "./pages/About";
-import NavBar from "./components/layout/NavBar";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import { configRoute } from "./utils/routes";
 import { configLanguage } from "./utils/language";
 
@@ -49,11 +50,8 @@ function App() {
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       <Router>
-        <div className="container">
-          <header>
-            <NavBar routeMapping={routeMapping} />
-          </header>
-
+        <div className="font-text w-auto">
+          <Header routeMapping={routeMapping} />
           <main>
             <Switch>
               {Object.keys(routeMapping).map(function map(obj, index) {
@@ -68,6 +66,7 @@ function App() {
               })}
             </Switch>
           </main>
+          <Footer />
         </div>
       </Router>
     </LanguageContext.Provider>
