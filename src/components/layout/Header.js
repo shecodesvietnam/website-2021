@@ -75,7 +75,7 @@ function Header({ routeMapping }) {
         <div className="flex justify-center sm:justify-start sm:grid sm:grid-cols-2 sm:w-1/2 md:w-full md:flex items-center">
           {socialMedia.map(({ link, Icon }, index) => (
             <a key={index} href={link} className="block mr-3">
-              <Icon className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
+              <Icon className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:scale-110" />
             </a>
           ))}
         </div>
@@ -146,7 +146,7 @@ function Header({ routeMapping }) {
                     <a key={index} href={link} className={className}>
                       <Icon
                         color="#ededed"
-                        className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                        className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:scale-110"
                       />
                     </a>
                   );
