@@ -118,7 +118,7 @@ function Header({ routeMapping }) {
             {renderLogo(
               "block w-1/4 transition duration-500 ease-in-out transform hover:scale-110"
             )}
-            <button onClick={handleToggleMenu}>
+            <button className="outline-none" onClick={handleToggleMenu}>
               <svg
                 className="w-5"
                 fill={menuOpened ? "#ededed" : "#fbfbfd"}

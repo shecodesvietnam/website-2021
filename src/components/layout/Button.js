@@ -2,6 +2,7 @@ function Button({ children, onClick }) {
   return (
     <button
       className="
+        outline-none
         block
         btn 
         bg-gradient-to-br 

@@ -312,7 +312,7 @@ function Homepage({ history }) {
           className="w-5/6 lg:w-3/4 mx-auto"
         >
           {Object.keys(contents.founderQuotes).map((key, index) => (
-            <figure key={index} className="text-center">
+            <figure key={index} className="text-justify">
               <div className="py-12 px-6">
                 <img
                   className="block rounded-full mx-auto w-36 h-36 mb-5"
@@ -327,8 +327,8 @@ function Homepage({ history }) {
                     )}
                   </p>
                 </blockquote>
-                <figcaption className="mb-2 italic text-lg text-gray-50">
-                  - {contents.founderQuotes[key].fullCaption}
+                <figcaption className="flex justify-center mb-2 italic text-lg text-gray-50">
+                  <div>- {contents.founderQuotes[key].fullCaption}</div>
                 </figcaption>
               </div>
             </figure>
@@ -371,7 +371,7 @@ function Homepage({ history }) {
               <h3 className="text-xl sm:text-5xl mb-4 font-title">
                 <strong>{contents.programs[key].title}</strong>
               </h3>
-              <p>
+              <p className="text-justify">
                 {simplify(
                   languageBasedDisplay(
                     contents.programs[key].description,
