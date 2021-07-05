@@ -275,7 +275,7 @@ function Homepage() {
         2xl:grid 
         2xl:grid-cols-2 
         gap-10 
-        md:items-center"
+        2xl:items-center"
       >
         <header className="mb-5 2xl:mb-0 2xl:flex 2xl:justify-end">
           <h2 className="text-center 2xl:text-right font-title 2xl:w-2/3">
