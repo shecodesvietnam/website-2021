@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -257,6 +257,33 @@ const readMore = configLanguage("Đọc thêm", "Read More");
 
 function Homepage({ history }) {
   const languageContext = useContext(LanguageContext);
+  const [partnersSlideWidth, setPartnersSlideWidth] = useState(
+    window.innerWidth > 1024
+      ? 7
+      : window.innerWidth > 768
+      ? 5
+      : window.innerWidth > 640
+      ? 4
+      : 3
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setPartnersSlideWidth(
+        window.innerWidth > 1024
+          ? 7
+          : window.innerWidth > 768
+          ? 5
+          : window.innerWidth > 640
+          ? 4
+          : 3
+      );
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   function moveToHackathonPage() {
     history.push("/hackathon");
@@ -452,15 +479,7 @@ function Homepage({ history }) {
           dots={false}
           infinite
           speed={500}
-          slidesToShow={
-            window.innerWidth > 1024
-              ? 7
-              : window.innerWidth > 768
-              ? 5
-              : window.innerWidth > 640
-              ? 4
-              : 3
-          }
+          slidesToShow={partnersSlideWidth}
           slidesToScroll={1}
           className="w-4/5 mx-auto"
           nextArrow={<NextArrow />}

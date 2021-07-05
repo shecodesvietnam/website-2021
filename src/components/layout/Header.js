@@ -5,7 +5,7 @@ import { configLanguage, languageBasedDisplay } from "./../../utils/language";
 import LanguageContext from "../../contexts/Language";
 import { assetsUrl } from "../../config.json";
 import LangPicker from "../lang/LangPicker";
-import { Facebook, Instagram, Linkedin, Gmail } from "./../icons";
+import { Facebook, Instagram, Linkedin } from "./../icons";
 
 const socialMedia = [
   {
@@ -19,10 +19,6 @@ const socialMedia = [
   {
     link: "https://www.linkedin.com/company/shecodeshackathon/",
     Icon: Linkedin,
-  },
-  {
-    link: "mailto:tienmai.shecodes@gmail.com",
-    Icon: Gmail,
   },
 ];
 
@@ -72,24 +68,21 @@ function Header({ routeMapping }) {
 
   return (
     <>
-      <div className="hidden px-2 py-1 lg:grid lg:grid-cols-2 lg:col-span-3 bg-gray-50">
-        <div className="flex justify-center sm:justify-start sm:grid sm:grid-cols-2 sm:w-1/2 md:w-full md:flex items-center">
+      <div className="hidden px-2 py-1 lg:flex lg:justify-end lg:col-span-3 bg-gray-50">
+        <div className="flex justify-center mr-10">
+          <p className="mr-5">
+            {languageBasedDisplay(
+              configLanguage("Trên mạng xã hội", "On social media"),
+              languageContext.lang
+            )}
+          </p>
           {socialMedia.map(({ link, Icon }, index) => (
             <a key={index} href={link} className="block mr-3">
               <Icon className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:scale-110" />
             </a>
           ))}
         </div>
-        <div className="sm:hidden flex justify-center my-3">
-          <p className="mr-5">
-            {languageBasedDisplay(
-              configLanguage("Chọn ngôn ngữ", "Choose a language"),
-              languageContext.lang
-            )}
-          </p>
-          <LangPicker className="justify-end" />
-        </div>
-        <div className="hidden sm:flex flex-col md:flex-row items-end justify-center md:justify-end">
+        <div className="hidden sm:flex sm:justify-center">
           <p className="md:mr-5">
             {languageBasedDisplay(
               configLanguage("Chọn ngôn ngữ", "Choose a language"),
@@ -99,7 +92,7 @@ function Header({ routeMapping }) {
           <LangPicker className="justify-end" />
         </div>
       </div>
-      <header className="bg-black bg-opacity-90 sticky top-0 z-50">
+      <header className="bg-black bg-opacity-80 sticky top-0 z-50 bg-blur-lg">
         <nav className="text-xs xl:text-base hidden lg:w-auto lg:grid lg:grid-cols-3 lg:items-center">
           <ul className="grid grid-cols-3 items-center justify-items-center">
             {routeMappingKeys
@@ -130,7 +123,7 @@ function Header({ routeMapping }) {
             </button>
           </div>
           <div
-            className={`absolute pr-2 leading-9 bg-black bg-opacity-90 z-0 w-screen left-0 h-screen text-right text-xl ${
+            className={`absolute pr-2 leading-9 bg-black bg-opacity-90 bg-blur-lg z-0 w-screen left-0 h-screen text-right text-xl ${
               menuOpened
                 ? "transition duration-500 ease-in transform translate-y-0"
                 : "transition duration-500 ease-out transform -translate-y-full"

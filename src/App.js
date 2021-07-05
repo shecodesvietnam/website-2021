@@ -9,12 +9,15 @@ import TalentConnector from "./pages/TalentConnector";
 import Mentorship from "./pages/Mentorship";
 import Webinar from "./pages/Webinar";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Members from "./pages/Members";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { configRoute } from "./utils/routes";
 import { configLanguage } from "./utils/language";
 
-const routeMapping = {
+const mainRouteMapping = {
   home: configRoute("/", Homepage, configLanguage("Trang Chủ", "Home")),
   hackathon: configRoute(
     "/hackathon",
@@ -44,6 +47,20 @@ const routeMapping = {
   about: configRoute("/about", About, configLanguage("Giới thiệu", "About")),
 };
 
+const secondaryRouteMapping = {
+  contact: configRoute(
+    "/contact",
+    Contact,
+    configLanguage("Liên hệ", "Contact")
+  ),
+  blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
+  members: configRoute(
+    "/members",
+    Members,
+    configLanguage("Thành viên", "Members")
+  ),
+};
+
 function App() {
   const [lang, setLang] = useState("vn");
 
@@ -51,22 +68,32 @@ function App() {
     <LanguageContext.Provider value={{ lang, setLang }}>
       <Router basename="/">
         <div className="relative font-text w-auto">
-          <Header routeMapping={routeMapping} />
+          <Header routeMapping={mainRouteMapping} />
           <main>
             <Switch>
-              {Object.keys(routeMapping).map(function map(obj, index) {
+              {Object.keys(mainRouteMapping).map(function map(obj, index) {
                 return (
                   <Route
                     key={index}
-                    path={routeMapping[obj].route}
-                    component={routeMapping[obj].component}
+                    path={mainRouteMapping[obj].route}
+                    component={mainRouteMapping[obj].component}
+                    exact
+                  />
+                );
+              })}
+              {Object.keys(secondaryRouteMapping).map(function map(obj, index) {
+                return (
+                  <Route
+                    key={index}
+                    path={secondaryRouteMapping[obj].route}
+                    component={secondaryRouteMapping[obj].component}
                     exact
                   />
                 );
               })}
             </Switch>
           </main>
-          <Footer />
+          <Footer secondaryRouteMapping={secondaryRouteMapping} />
         </div>
       </Router>
     </LanguageContext.Provider>

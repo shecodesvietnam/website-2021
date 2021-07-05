@@ -17,6 +17,7 @@ function Button({ children, onClick }) {
         hover:bg-gradient-to-br 
         hover:from-ruby 
         hover:to-governor
+        hover:scale-110
       "
       onClick={onClick}
     >
