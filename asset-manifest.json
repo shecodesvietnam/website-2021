@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/website-2021/static/css/main.e81303f0.chunk.css",
-    "main.js": "/website-2021/static/js/main.2c17ed99.chunk.js",
-    "main.js.map": "/website-2021/static/js/main.2c17ed99.chunk.js.map",
+    "main.css": "/website-2021/static/css/main.e8e05aea.chunk.css",
+    "main.js": "/website-2021/static/js/main.1d3e5216.chunk.js",
+    "main.js.map": "/website-2021/static/js/main.1d3e5216.chunk.js.map",
     "runtime-main.js": "/website-2021/static/js/runtime-main.f4c4cfda.js",
     "runtime-main.js.map": "/website-2021/static/js/runtime-main.f4c4cfda.js.map",
     "static/css/2.2d529235.chunk.css": "/website-2021/static/css/2.2d529235.chunk.css",
@@ -12,25 +12,19 @@
     "static/js/3.e2fd44a9.chunk.js.map": "/website-2021/static/js/3.e2fd44a9.chunk.js.map",
     "index.html": "/website-2021/index.html",
     "static/css/2.2d529235.chunk.css.map": "/website-2021/static/css/2.2d529235.chunk.css.map",
-    "static/css/main.e81303f0.chunk.css.map": "/website-2021/static/css/main.e81303f0.chunk.css.map",
+    "static/css/main.e8e05aea.chunk.css.map": "/website-2021/static/css/main.e8e05aea.chunk.css.map",
     "static/js/2.25aefdea.chunk.js.LICENSE.txt": "/website-2021/static/js/2.25aefdea.chunk.js.LICENSE.txt",
     "static/media/Flag_of_Vietnam.16411ca6.svg": "/website-2021/static/media/Flag_of_Vietnam.16411ca6.svg",
     "static/media/Flag_of_the_United_Kingdom.816b66b4.svg": "/website-2021/static/media/Flag_of_the_United_Kingdom.816b66b4.svg",
     "static/media/index.css": "/website-2021/static/media/slick.c94f7671.ttf",
-    "static/media/close.3721b02e.svg": "/website-2021/static/media/close.3721b02e.svg",
-    "static/media/facebook.f33eda2b.svg": "/website-2021/static/media/facebook.f33eda2b.svg",
-    "static/media/gmail.b6b3a7f0.svg": "/website-2021/static/media/gmail.b6b3a7f0.svg",
-    "static/media/instagram.50bd9255.svg": "/website-2021/static/media/instagram.50bd9255.svg",
     "static/media/left-arrow.f7fed8b9.svg": "/website-2021/static/media/left-arrow.f7fed8b9.svg",
-    "static/media/linkedin.9f086df7.svg": "/website-2021/static/media/linkedin.9f086df7.svg",
-    "static/media/menu.427197e0.svg": "/website-2021/static/media/menu.427197e0.svg",
     "static/media/next.ca5e04ef.svg": "/website-2021/static/media/next.ca5e04ef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f4c4cfda.js",
     "static/css/2.2d529235.chunk.css",
     "static/js/2.25aefdea.chunk.js",
-    "static/css/main.e81303f0.chunk.css",
-    "static/js/main.2c17ed99.chunk.js"
+    "static/css/main.e8e05aea.chunk.css",
+    "static/js/main.1d3e5216.chunk.js"
   ]
 }
