@@ -19,14 +19,14 @@ function LangPicker({ className = "" }) {
     <div className={`flex ${className}`}>
       <button className="w-8 mr-2" onClick={handleVietnamese}>
         <img
-          className="min-w-full h-auto rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          className="min-w-full h-auto rounded transition duration-500 ease-in-out transform hover:scale-110"
           src={vietnamFlag}
           alt="vietnam flag"
         />
       </button>
       <button className="w-8" onClick={handleEnglish}>
         <img
-          className="min-w-full h-auto rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          className="min-w-full h-auto rounded transition duration-500 ease-in-out transform hover:scale-110"
           src={theUKFlag}
           alt="the uk flag"
         />
