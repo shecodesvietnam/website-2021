@@ -53,7 +53,8 @@ function Header({ routeMapping }) {
         duration-500 
         ease-in-out 
         transform 
-        hover:text-gray-50`,
+        hover:text-gray-50
+        hover:scale-110`,
         routeMapping[obj].route,
         languageBasedDisplay(routeMapping[obj].name, languageContext.lang)
       ),
