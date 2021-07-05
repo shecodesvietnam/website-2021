@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/website-2021/static/css/main.aac73056.chunk.css",
-    "main.js": "/website-2021/static/js/main.27d7e5de.chunk.js",
-    "main.js.map": "/website-2021/static/js/main.27d7e5de.chunk.js.map",
+    "main.css": "/website-2021/static/css/main.edceccc1.chunk.css",
+    "main.js": "/website-2021/static/js/main.15aba76e.chunk.js",
+    "main.js.map": "/website-2021/static/js/main.15aba76e.chunk.js.map",
     "runtime-main.js": "/website-2021/static/js/runtime-main.f4c4cfda.js",
     "runtime-main.js.map": "/website-2021/static/js/runtime-main.f4c4cfda.js.map",
     "static/css/2.2d529235.chunk.css": "/website-2021/static/css/2.2d529235.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.e2fd44a9.chunk.js.map": "/website-2021/static/js/3.e2fd44a9.chunk.js.map",
     "index.html": "/website-2021/index.html",
     "static/css/2.2d529235.chunk.css.map": "/website-2021/static/css/2.2d529235.chunk.css.map",
-    "static/css/main.aac73056.chunk.css.map": "/website-2021/static/css/main.aac73056.chunk.css.map",
+    "static/css/main.edceccc1.chunk.css.map": "/website-2021/static/css/main.edceccc1.chunk.css.map",
     "static/js/2.19e70c48.chunk.js.LICENSE.txt": "/website-2021/static/js/2.19e70c48.chunk.js.LICENSE.txt",
     "static/media/Flag_of_Vietnam.16411ca6.svg": "/website-2021/static/media/Flag_of_Vietnam.16411ca6.svg",
     "static/media/Flag_of_the_United_Kingdom.816b66b4.svg": "/website-2021/static/media/Flag_of_the_United_Kingdom.816b66b4.svg",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.f4c4cfda.js",
     "static/css/2.2d529235.chunk.css",
     "static/js/2.19e70c48.chunk.js",
-    "static/css/main.aac73056.chunk.css",
-    "static/js/main.27d7e5de.chunk.js"
+    "static/css/main.edceccc1.chunk.css",
+    "static/js/main.15aba76e.chunk.js"
   ]
 }
