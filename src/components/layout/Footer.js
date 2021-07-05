@@ -57,8 +57,8 @@ function Footer() {
           &copy;{" "}
           {languageBasedDisplay(
             configLanguage(
-              "Thiết kế và phát triển với 💖 bởi SheCodes Hà Nội",
-              "Design and Develop with 💖 by SheCodes Hanoi"
+              "Thiết kế và phát triển với 💖 bởi SheCodes Việt Nam",
+              "Design and Develop with 💖 by SheCodes Vietnam"
             ),
             languageContext.lang
           )}

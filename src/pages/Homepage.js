@@ -292,7 +292,7 @@ function Homepage() {
             </div>
           </h2>
         </header>
-        <p className="text-lg 2xl:text-2xl text-justify 2xl:w-2/3 mt-10">
+        <p className="text-lg 2xl:text-2xl text-justify 2xl:w-2/3 mt-10 2xl:mt-0">
           {languageBasedDisplay(
             contents.intro.description,
             languageContext.lang
