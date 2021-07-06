@@ -1,30 +1,28 @@
 {
   "files": {
-    "main.css": "/website-2021/static/css/main.edceccc1.chunk.css",
-    "main.js": "/website-2021/static/js/main.1dd51f05.chunk.js",
-    "main.js.map": "/website-2021/static/js/main.1dd51f05.chunk.js.map",
-    "runtime-main.js": "/website-2021/static/js/runtime-main.f4c4cfda.js",
-    "runtime-main.js.map": "/website-2021/static/js/runtime-main.f4c4cfda.js.map",
+    "main.css": "/website-2021/static/css/main.782ea458.chunk.css",
+    "main.js": "/website-2021/static/js/main.c4cae2dc.chunk.js",
+    "main.js.map": "/website-2021/static/js/main.c4cae2dc.chunk.js.map",
+    "runtime-main.js": "/website-2021/static/js/runtime-main.ad3dfda9.js",
+    "runtime-main.js.map": "/website-2021/static/js/runtime-main.ad3dfda9.js.map",
     "static/css/2.2d529235.chunk.css": "/website-2021/static/css/2.2d529235.chunk.css",
-    "static/js/2.19e70c48.chunk.js": "/website-2021/static/js/2.19e70c48.chunk.js",
-    "static/js/2.19e70c48.chunk.js.map": "/website-2021/static/js/2.19e70c48.chunk.js.map",
-    "static/js/3.e2fd44a9.chunk.js": "/website-2021/static/js/3.e2fd44a9.chunk.js",
-    "static/js/3.e2fd44a9.chunk.js.map": "/website-2021/static/js/3.e2fd44a9.chunk.js.map",
+    "static/js/2.e59ff8cf.chunk.js": "/website-2021/static/js/2.e59ff8cf.chunk.js",
+    "static/js/2.e59ff8cf.chunk.js.map": "/website-2021/static/js/2.e59ff8cf.chunk.js.map",
+    "static/js/3.05f75b87.chunk.js": "/website-2021/static/js/3.05f75b87.chunk.js",
+    "static/js/3.05f75b87.chunk.js.map": "/website-2021/static/js/3.05f75b87.chunk.js.map",
     "index.html": "/website-2021/index.html",
     "static/css/2.2d529235.chunk.css.map": "/website-2021/static/css/2.2d529235.chunk.css.map",
-    "static/css/main.edceccc1.chunk.css.map": "/website-2021/static/css/main.edceccc1.chunk.css.map",
-    "static/js/2.19e70c48.chunk.js.LICENSE.txt": "/website-2021/static/js/2.19e70c48.chunk.js.LICENSE.txt",
+    "static/css/main.782ea458.chunk.css.map": "/website-2021/static/css/main.782ea458.chunk.css.map",
+    "static/js/2.e59ff8cf.chunk.js.LICENSE.txt": "/website-2021/static/js/2.e59ff8cf.chunk.js.LICENSE.txt",
     "static/media/Flag_of_Vietnam.16411ca6.svg": "/website-2021/static/media/Flag_of_Vietnam.16411ca6.svg",
     "static/media/Flag_of_the_United_Kingdom.816b66b4.svg": "/website-2021/static/media/Flag_of_the_United_Kingdom.816b66b4.svg",
-    "static/media/index.css": "/website-2021/static/media/slick.c94f7671.ttf",
-    "static/media/left-arrow.f7fed8b9.svg": "/website-2021/static/media/left-arrow.f7fed8b9.svg",
-    "static/media/next.ca5e04ef.svg": "/website-2021/static/media/next.ca5e04ef.svg"
+    "static/media/index.css": "/website-2021/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.f4c4cfda.js",
+    "static/js/runtime-main.ad3dfda9.js",
     "static/css/2.2d529235.chunk.css",
-    "static/js/2.19e70c48.chunk.js",
-    "static/css/main.edceccc1.chunk.css",
-    "static/js/main.1dd51f05.chunk.js"
+    "static/js/2.e59ff8cf.chunk.js",
+    "static/css/main.782ea458.chunk.css",
+    "static/js/main.c4cae2dc.chunk.js"
   ]
 }
