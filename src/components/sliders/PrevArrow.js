@@ -1,4 +1,4 @@
-import prevIcon from "./../../assets/left-arrow.svg";
+import prevIcon from "./left-arrow.svg";
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;

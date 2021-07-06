@@ -1,4 +1,4 @@
-import nextIcon from "./../../assets/next.svg";
+import nextIcon from "./next.svg";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;

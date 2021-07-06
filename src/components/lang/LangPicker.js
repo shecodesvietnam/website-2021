@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
 import LanguageContext from "../../contexts/Language";
-import theUKFlag from "./../../assets/Flag_of_the_United_Kingdom.svg";
-import vietnamFlag from "./../../assets/Flag_of_Vietnam.svg";
+import theUKFlag from "./Flag_of_the_United_Kingdom.svg";
+import vietnamFlag from "./Flag_of_Vietnam.svg";
 
 function LangPicker({ className = "" }) {
   const languageContext = useContext(LanguageContext);

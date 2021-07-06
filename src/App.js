@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Members from "./pages/Members";
+import Sponsors from "./pages/Sponsors";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { configRoute } from "./utils/routes";
@@ -48,6 +49,11 @@ const mainRouteMapping = {
 };
 
 const secondaryRouteMapping = {
+  sponsors: configRoute(
+    "/sponsors",
+    Sponsors,
+    configLanguage("Nhà tài trợ", "Sponsors")
+  ),
   contact: configRoute(
     "/contact",
     Contact,

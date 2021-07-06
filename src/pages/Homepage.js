@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -6,8 +6,6 @@ import LanguageContext from "./../contexts/Language";
 import { assetsUrl } from "./../config.json";
 import { configLanguage, languageBasedDisplay } from "./../utils/language";
 import { simplify } from "./../utils/text";
-import NextArrow from "../components/sliders/NextArrow";
-import PrevArrow from "./../components/sliders/PrevArrow";
 import Button from "./../components/layout/Button";
 
 const contents = {
@@ -205,85 +203,12 @@ const contents = {
       ),
     },
   ],
-  partners: [
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/ai4e.png`,
-      alt: "AI4E",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/bkhup.jpg`,
-      alt: "BKHUp",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/colorme-logo.jpg`,
-      alt: "ColorME",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/globalcare-logo.jpg`,
-      alt: "Global Care",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/logo-Summit-01-1024x292.jpg`,
-      alt: "Summit",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/logo-ebiv-.jpg`,
-      alt: "EBIV",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/openm-logo.jpg`,
-      alt: "OpenM",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/rudicaf.png`,
-      alt: "Rudicaf",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/scholarships.png`,
-      alt: "HannahEd",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/sutunam-logo.jpg`,
-      alt: "Sutunam",
-    },
-    {
-      imgSrc: `${assetsUrl}/2020/sponsors/hn/team_x.png`,
-      alt: "TeamX",
-    },
-  ],
 };
 
 const readMore = configLanguage("Đọc thêm", "Read More");
 
 function Homepage({ history }) {
   const languageContext = useContext(LanguageContext);
-  const [partnersSlideWidth, setPartnersSlideWidth] = useState(
-    window.innerWidth > 1024
-      ? 7
-      : window.innerWidth > 768
-      ? 5
-      : window.innerWidth > 640
-      ? 4
-      : 3
-  );
-
-  useEffect(() => {
-    function handleResize() {
-      setPartnersSlideWidth(
-        window.innerWidth > 1024
-          ? 7
-          : window.innerWidth > 768
-          ? 5
-          : window.innerWidth > 640
-          ? 4
-          : 3
-      );
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   function moveToHackathonPage() {
     history.push("/hackathon");
@@ -419,7 +344,7 @@ function Homepage({ history }) {
             </div>
           </section>
         ))}
-        <section className="text-justify lg:text-left px-10 py-10 lg:py-0">
+        <section className="text-justify lg:text-left px-10 py-10 lg:py-0 h-full flex flex-col justify-center bg-light">
           <p className="text-2xl">
             {languageBasedDisplay(
               configLanguage(
@@ -462,39 +387,6 @@ function Homepage({ history }) {
             </section>
           ))}
         </div>
-      </article>
-      <article className="py-32 bg-light">
-        <header className="col-span-full mb-20">
-          <h3 className="text-center text-5xl px-2 lg:px-0 leading-tight sm:leading-none font-semibold">
-            {languageBasedDisplay(
-              configLanguage(
-                `Các Nhà Tài Trợ Qua Từng Năm`,
-                `Our Partners Throughout The Years`
-              ),
-              languageContext.lang
-            )}
-          </h3>
-        </header>
-        <Slider
-          dots={false}
-          infinite
-          speed={500}
-          slidesToShow={partnersSlideWidth}
-          slidesToScroll={1}
-          className="w-4/5 mx-auto"
-          nextArrow={<NextArrow />}
-          prevArrow={<PrevArrow />}
-        >
-          {contents.partners.map((partner, index) => (
-            <div key={index} className="px-6">
-              <img
-                src={partner.imgSrc}
-                alt={partner.alt}
-                className="block w-36"
-              />
-            </div>
-          ))}
-        </Slider>
       </article>
     </>
   );
