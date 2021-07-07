@@ -9,9 +9,9 @@ function Footer({ secondaryRouteMapping }) {
   const routeMappingKeys = Object.keys(secondaryRouteMapping);
 
   return (
-    <footer className="bg-gray-200 py-2 px-2 w-auto sm:flex sm:flex-row-reverse sm:justify-between">
+    <footer className="bg-gray-200 py-2 px-2 w-auto lg:flex lg:flex-row-reverse lg:justify-evenly">
       <nav>
-        <ul className="flex justify-center mb-5 sm:mb-0 sm:justify-end">
+        <ul className="flex justify-center mb-5 lg:mb-0 lg:justify-end">
           {routeMappingKeys.map((key, index) => {
             let className = "";
 

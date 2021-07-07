@@ -40,7 +40,7 @@ function Header({ routeMapping }) {
   }
 
   const map = useCallback(
-    (obj, index) =>
+    (className) => (obj, index) =>
       createLink(
         index,
         `mx-auto
@@ -50,7 +50,8 @@ function Header({ routeMapping }) {
         ease-in-out 
         transform 
         hover:text-gray-50
-        hover:scale-110`,
+        hover:scale-110 
+        ${className ? className : ""}`,
         routeMapping[obj].route,
         languageBasedDisplay(routeMapping[obj].name, languageContext.lang)
       ),
@@ -68,44 +69,32 @@ function Header({ routeMapping }) {
 
   return (
     <>
-      <div className="hidden px-2 py-1 lg:flex lg:justify-end lg:col-span-3 bg-gray-50">
-        <div className="flex justify-center mr-10">
-          <p className="mr-5">
-            {languageBasedDisplay(
-              configLanguage("Trên mạng xã hội", "On social media"),
-              languageContext.lang
-            )}
-          </p>
-          {socialMedia.map(({ link, Icon }, index) => (
-            <a key={index} href={link} className="block mr-3">
-              <Icon className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:scale-110" />
-            </a>
-          ))}
-        </div>
-        <div className="hidden sm:flex sm:justify-center">
-          <p className="md:mr-5">
-            {languageBasedDisplay(
-              configLanguage("Chọn ngôn ngữ", "Choose a language"),
-              languageContext.lang
-            )}
-          </p>
-          <LangPicker className="justify-end" />
-        </div>
-      </div>
-      <header className="bg-black bg-opacity-80 sticky top-0 z-50 bg-blur-lg">
-        <nav className="text-xs xl:text-base hidden lg:w-auto lg:grid lg:grid-cols-3 lg:items-center">
-          <ul className="grid grid-cols-3 items-center justify-items-center">
-            {routeMappingKeys
-              .slice(1, routeMappingKeys.length / 2 + 1)
-              .map(map)}
-          </ul>
+      <header className="bg-black bg-opacity-80 sticky top-0 z-50 bg-blur-lg py-1">
+        <nav className="text-xs xl:text-base hidden lg:w-auto lg:flex lg:items-center lg:justify-evenly px-2">
           {renderLogo(
-            "block mx-auto w-1/3 transition duration-500 ease-in-out transform hover:scale-110"
+            "block w-36 transition duration-500 ease-in-out transform hover:scale-110 mr-10"
           )}
-          <ul className="grid grid-cols-3 items-center justify-items-center">
-            {routeMappingKeys.slice(routeMappingKeys.length / 2 + 1).map(map)}
+          <ul className="flex justify-center">
+            {routeMappingKeys
+              .slice(1, routeMappingKeys.slice(1).length)
+              .map(map("mr-5"))}
+            {routeMappingKeys
+              .slice(routeMappingKeys.slice(1).length)
+              .map(map())}
           </ul>
+          <div className="flex items-center ml-5">
+            {socialMedia.map(({ link, Icon }, index) => (
+              <a key={index} href={link} className="block mr-3">
+                <Icon
+                  color="#ededed"
+                  className="w-7 h-7 md:w-6 md:h-6 transition duration-500 ease-in-out transform hover:scale-110"
+                />
+              </a>
+            ))}
+            <LangPicker className="justify-end" />
+          </div>
         </nav>
+
         <nav className="text-base py-1 px-2 lg:hidden">
           <div className="relative z-50 flex justify-between items-center">
             {renderLogo(
@@ -125,11 +114,11 @@ function Header({ routeMapping }) {
           <div
             className={`absolute pr-2 leading-9 bg-black bg-opacity-90 bg-blur-lg z-0 w-screen left-0 h-screen text-right text-xl ${
               menuOpened
-                ? "transition duration-500 ease-in transform translate-y-0"
-                : "transition duration-500 ease-out transform -translate-y-full"
+                ? "transition duration-500 ease-in transform translate-y-0 opacity-100"
+                : "transition duration-500 ease-out transform -translate-y-full opacity-0"
             }`}
           >
-            <ul>{routeMappingKeys.slice(1).map(map)}</ul>
+            <ul>{routeMappingKeys.slice(1).map(map())}</ul>
             <div className="bg-transparent mt-2">
               <div className="flex justify-end items-center mb-2">
                 {socialMedia.map(({ link, Icon }, index) => {

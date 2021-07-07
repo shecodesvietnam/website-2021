@@ -143,7 +143,10 @@ const contents = {
       themselves. SheCodes will create a network for women to break down personal and 
       social barriers to bravely enter this technology field.`
       ),
-      fullCaption: "Mai Phương Thủy Tiên (Director of SheCodes Vietnam)",
+      fullCaption: configLanguage(
+        "Mai Phương Thủy Tiên (Đồng sáng lập SheCodes Việt Nam)",
+        "Mai Phuong Thuy Tien (Co-Founder of SheCodes Vietnam"
+      ),
     },
     my: {
       imgSrc: `${assetsUrl}/2020/staffs/HN/PM_Nguyen_Huyen_My.jpg`,
@@ -161,7 +164,10 @@ const contents = {
       great difficulties of women entering the IT field, our team here, both men and 
       women, is ready to support you to overcome your fears and barriers.`
       ),
-      fullCaption: "Nguyễn Huyền My (Co-Founder of SheCodes Vietnam)",
+      fullCaption: configLanguage(
+        "Nguyễn Huyền My (Đồng sáng lập SheCodes Việt Nam)",
+        "Nguyen Huyen My (Co-Founder of SheCodes Vietnam)"
+      ),
     },
     ha: {
       imgSrc: `${assetsUrl}/2020/staffs/HN/PM_Nguyen_Vu_Ngan_Ha.jpg`,
@@ -176,7 +182,10 @@ const contents = {
       career paths, helping them to be more confident to pursue their career. Information 
       Technology.`
       ),
-      fullCaption: "Nguyễn Vũ Ngân Hà (Head of Tech Marathon) - Hà Nội",
+      fullCaption: configLanguage(
+        "Nguyễn Vũ Ngân Hà (Trưởng chương trình Tech Marathon)",
+        "Nguyen Vu Ngan Ha (Head of Tech Marathon)"
+      ),
     },
   },
   theNumbers: [
@@ -280,7 +289,13 @@ function Homepage({ history }) {
                   </p>
                 </blockquote>
                 <figcaption className="flex justify-center mb-2 italic text-lg text-gray-50">
-                  <div>- {contents.founderQuotes[key].fullCaption}</div>
+                  <div>
+                    -{" "}
+                    {languageBasedDisplay(
+                      contents.founderQuotes[key].fullCaption,
+                      languageContext.lang
+                    )}
+                  </div>
                 </figcaption>
               </div>
             </figure>
