@@ -60,19 +60,22 @@ function Header({ routeMapping }) {
 
   const renderLogo = useCallback(
     (className) => (
-      <Href to={routeMappingKeys[0].route} className={className}>
+      <Href to={routeMapping[routeMappingKeys[0]].route} className={className}>
         <img src={`${assetsUrl}/2021/commons/logo.png`} alt="SheCodes Logo" />
       </Href>
     ),
-    [routeMappingKeys]
+    [routeMappingKeys, routeMapping]
   );
 
   return (
     <>
-      <header className="bg-black bg-opacity-80 sticky top-0 z-50 bg-blur-lg py-1">
-        <nav className="text-xs xl:text-base hidden lg:w-auto lg:flex lg:items-center lg:justify-evenly px-2">
+      <header
+        id="header"
+        className="bg-black bg-opacity-95 sticky top-0 z-50 bg-blur-lg py-1 px-2 w-auto"
+      >
+        <nav className="text-xs xl:text-base hidden lg:w-11/12 xl:w-10/12 lg:mx-auto lg:flex lg:items-center lg:justify-between">
           {renderLogo(
-            "block w-36 transition duration-500 ease-in-out transform hover:scale-110 mr-10"
+            "block w-32 transition duration-500 ease-in-out transform hover:scale-110 mr-10"
           )}
           <ul className="flex justify-center">
             {routeMappingKeys
@@ -82,7 +85,7 @@ function Header({ routeMapping }) {
               .slice(routeMappingKeys.slice(1).length)
               .map(map())}
           </ul>
-          <div className="flex items-center ml-5">
+          <div className="flex items-center">
             {socialMedia.map(({ link, Icon }, index) => (
               <a key={index} href={link} className="block mr-3">
                 <Icon
@@ -120,7 +123,7 @@ function Header({ routeMapping }) {
           >
             <ul>{routeMappingKeys.slice(1).map(map())}</ul>
             <div className="bg-transparent mt-2">
-              <div className="flex justify-end items-center mb-2">
+              <div className="flex justify-end items-center pb-2">
                 {socialMedia.map(({ link, Icon }, index) => {
                   let className = "block ";
                   if (index !== socialMedia.length - 1) className += "mr-3";

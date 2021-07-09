@@ -14,6 +14,8 @@ module.exports = {
         ruby: "#e91f6f",
         governor: "#5056a1",
         light: "#fbfbfd",
+        "black-light": "#151516",
+        "black-xlight": "#1d1d1f",
       },
     },
   },

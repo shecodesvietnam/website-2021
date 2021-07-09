@@ -5,16 +5,7 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import LanguageContext from "../../contexts/Language";
 import { displayAbbr } from "./../../utils/language";
 
-const langMapping = [
-  {
-    abbr: "VIE",
-    name: "vn",
-  },
-  {
-    abbr: "ENG",
-    name: "en",
-  },
-];
+const langs = ["vn", "en"];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -72,7 +63,8 @@ function LangPicker({ className = "" }) {
                 <Listbox.Options
                   static
                   className="
-                    absolute z-10 
+                    absolute 
+                    z-90 
                     mt-1 w-full 
                     bg-black 
                     bg-opacity-80 
@@ -88,7 +80,7 @@ function LangPicker({ className = "" }) {
                     focus:outline-none 
                     sm:text-sm"
                 >
-                  {langMapping.map((item, index) => (
+                  {langs.map((item, index) => (
                     <Listbox.Option
                       key={index}
                       className={({ active }) =>
@@ -99,7 +91,7 @@ function LangPicker({ className = "" }) {
                           "cursor-default select-none relative py-2 pl-3 pr-9"
                         )
                       }
-                      value={item.name}
+                      value={item}
                     >
                       {({ selected, active }) => (
                         <>
@@ -110,7 +102,7 @@ function LangPicker({ className = "" }) {
                                 "ml-3 block truncate text-gray-200"
                               )}
                             >
-                              {item.abbr}
+                              {displayAbbr(item)}
                             </span>
                           </div>
 

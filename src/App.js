@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import LanguageContext from "./contexts/Language";
 import Homepage from "./pages/Homepage";
 import Hackathon from "./pages/Hackathon";
+import HackathonDetails from "./pages/HackathonDetails";
 import TechMarathon from "./pages/TechMarathon";
 import TalentConnector from "./pages/TalentConnector";
 import Mentorship from "./pages/Mentorship";
@@ -97,6 +98,7 @@ function App() {
                   />
                 );
               })}
+              <Route path="/hackathon/:year" component={HackathonDetails} />
             </Switch>
           </main>
           <Footer secondaryRouteMapping={secondaryRouteMapping} />

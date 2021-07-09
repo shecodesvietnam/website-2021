@@ -25,4 +25,12 @@
   .btn {
     @apply rounded-full p-3;
   }
+
+  .btn-sm {
+    @apply rounded-full p-1;
+  }
+
+  .z-90 {
+    z-index: 90;
+  }
 }

@@ -19,7 +19,7 @@ const contents = {
     description: configLanguage(
       `Chúng tôi khuyến khích phái nữ tham gia vào lĩnh vực CNTT, qua đó dần
     xóa bỏ khoảng cách giới tính, thay đổi tư duy của mọi người về phái nữ
-    và tạo ra một môi trường dám thử sức - dám thất bại,khích lệ sự sáng
+    và tạo ra một môi trường dám thử sức - dám thất bại, khích lệ sự sáng
     tạo, học hỏi công nghệ.`,
       `We encourage women to take part in the Tech industry with the aim to narrow 
     the gender gap, reduce prejudice and create a supportive environment for 
@@ -28,7 +28,7 @@ const contents = {
   },
   programs: {
     hackathon: {
-      imgSrc: `${assetsUrl}/2020/media/hackathon.jpg`,
+      imgSrc: `${assetsUrl}/2021/homepage/DSC06434.JPG`,
       title: "HACKATHON",
       description: configLanguage(
         `SheCodes Hackathon là hackathon đầu tiên dành riêng cho phái nữ tại Việt Nam, 
@@ -51,7 +51,7 @@ const contents = {
       link: "/hackathon",
     },
     techMarathon: {
-      imgSrc: `${assetsUrl}/2020/media/precoding-1.png`,
+      imgSrc: `${assetsUrl}/2021/homepage/YUE_79751.jpg`,
       title: "TECH MARATHON",
       description: configLanguage(
         `Tech Marathon là chuỗi các lớp học "crash course" dành cho những người chưa có 
@@ -69,7 +69,7 @@ const contents = {
       link: "/tech-marathon",
     },
     talentConnector: {
-      imgSrc: `${assetsUrl}/2020/hackathon/IMG_6217.JPG`,
+      imgSrc: `${assetsUrl}/2021/homepage/IMG_6201.JPG`,
       title: "TALENT CONNECTOR",
       description: configLanguage(
         `Với mục tiêu đẩy mạnh sự đa dạng và thu hẹp khoảng cách giới tính trong lĩnh 
@@ -88,7 +88,7 @@ const contents = {
       link: "/talent-connector",
     },
     mentorship: {
-      imgSrc: `${assetsUrl}/2020/media/precoding-2.png`,
+      imgSrc: `${assetsUrl}/2021/homepage/DSC06806.JPG`,
       title: "MENTORSHIP",
       description: configLanguage(
         `Chương trình SheCodes Mentorship được xây dựng để giúp các bạn nữ (mentees) 
@@ -106,7 +106,7 @@ const contents = {
       link: "/mentorship",
     },
     webinar: {
-      imgSrc: `${assetsUrl}/2019/hackathon/event.jpg`,
+      imgSrc: `${assetsUrl}/2021/homepage/IMG_6193.JPG`,
       title: "WEBINAR",
       description: configLanguage(
         `Webinar là chuỗi các hội thảo được tổ chức trực tuyến nhằm cung cấp cho các 
@@ -220,13 +220,13 @@ function Homepage({ history }) {
   const languageContext = useContext(LanguageContext);
 
   function moveToHackathonPage() {
-    history.push("/hackathon");
+    history.push("/hackathon/2021");
   }
 
   return (
     <>
-      <article className="bg-light px-2 lg:px-20 xl:px-28 py-16 mb-2">
-        <header className="mb-16">
+      <article className="bg-black h-screen px-2 lg:px-20 xl:px-28 py-16">
+        <header className="mb-16 mt-10 text-gray-50">
           <h2 className="text-center font-title">
             <span className="block tracking-widest mb-3 text-4xl sm:text-6xl font-title">
               SheCodes Vietnam
@@ -239,7 +239,7 @@ function Homepage({ history }) {
             </span>
           </h2>
         </header>
-        <p className="text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
+        <p className="text-gray-50 text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
           {languageBasedDisplay(
             contents.intro.description,
             languageContext.lang
@@ -254,8 +254,183 @@ function Homepage({ history }) {
           </Button>
         </div>
       </article>
+      <article className="grid grid-cols-4 xl:grid-cols-3 gap-6 bg-black-light px-5 sm:px-14 py-16 sm:py-24">
+        <section className="object-cover relative col-span-4 xl:col-span-3">
+          <img
+            src={contents.programs.hackathon.imgSrc}
+            className="rounded-3xl min-h-full"
+            alt="Hackathon"
+          />
+          <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
+            <div className="text-gray-50 w-1/3 pl-5 pt-6">
+              <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <strong>{contents.programs.hackathon.title}</strong>
+              </h3>
+              <p className="text-justify text-lg hidden lg:block">
+                {simplify(
+                  languageBasedDisplay(
+                    contents.programs.hackathon.description,
+                    languageContext.lang
+                  ),
+                  40
+                )}
+                {" ..."}
+              </p>
+              <div className="block mt-0 sm:mt-7">
+                <Link
+                  className="hover:underline"
+                  to={contents.programs.hackathon.link}
+                >
+                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="object-cover col-span-4 xl:col-span-2 relative">
+          <img
+            src={contents.programs.mentorship.imgSrc}
+            className="rounded-3xl min-h-full"
+            alt="Mentorship"
+          />
+          <div className="flex flex-col md:flex-row justify-end md:text-right absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
+            <div className="text-gray-50 w-1/2 pl-5 md:pr-5 pb-6 md:pt-6">
+              <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <strong>{contents.programs.mentorship.title}</strong>
+              </h3>
+              <p className="text-justify text-lg hidden lg:block">
+                {simplify(
+                  languageBasedDisplay(
+                    contents.programs.mentorship.description,
+                    languageContext.lang
+                  ),
+                  40
+                )}
+                {" ..."}
+              </p>
+              <div className="block mt-0 sm:mt-7">
+                <Link
+                  className="hover:underline"
+                  to={contents.programs.mentorship.link}
+                >
+                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="object-cover relative col-span-4 md:col-span-2 xl:col-auto">
+          <img
+            src={contents.programs.techMarathon.imgSrc}
+            className="rounded-3xl min-h-full"
+            alt="Tech Marathon"
+          />
+          <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
+            <div className="text-gray-50 px-5 pt-6">
+              <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <strong>{contents.programs.techMarathon.title}</strong>
+              </h3>
+              <p className="text-justify text-lg hidden lg:block">
+                {simplify(
+                  languageBasedDisplay(
+                    contents.programs.techMarathon.description,
+                    languageContext.lang
+                  ),
+                  40
+                )}
+                {" ..."}
+              </p>
+              <div className="block mt-0 sm:mt-7">
+                <Link
+                  className="hover:underline"
+                  to={contents.programs.techMarathon.link}
+                >
+                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="object-cover relative col-span-4 md:col-span-2 xl:col-auto">
+          <img
+            src={contents.programs.webinar.imgSrc}
+            className="rounded-3xl min-h-full"
+            alt="Webinar"
+          />
+          <div className="flex flex-col justify-end absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
+            <div className="text-gray-50 px-5 pb-6">
+              <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <strong>{contents.programs.webinar.title}</strong>
+              </h3>
+              <p className="text-justify text-lg hidden lg:block">
+                {simplify(
+                  languageBasedDisplay(
+                    contents.programs.webinar.description,
+                    languageContext.lang
+                  ),
+                  40
+                )}
+                {" ..."}
+              </p>
+              <div className="block mt-0 sm:mt-7">
+                <Link
+                  className="hover:underline"
+                  to={contents.programs.webinar.link}
+                >
+                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="object-cover col-span-4 xl:col-span-2 relative">
+          <img
+            src={contents.programs.talentConnector.imgSrc}
+            className="rounded-3xl"
+            alt="Talent Connector"
+          />
+          <div className="flex flex-col justify-end absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
+            <div className="text-gray-50 w-1/2 pl-5 pb-6">
+              <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <strong>{contents.programs.talentConnector.title}</strong>
+              </h3>
+              <p className="text-justify text-lg hidden lg:block">
+                {simplify(
+                  languageBasedDisplay(
+                    contents.programs.talentConnector.description,
+                    languageContext.lang
+                  ),
+                  40
+                )}
+                {" ..."}
+              </p>
+              <div className="block mt-0 sm:mt-7">
+                <Link
+                  className="hover:underline"
+                  to={contents.programs.talentConnector.link}
+                >
+                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="text-gray-800 col-span-4 xl:col-span-3 bg-gradient-to-br from-malibu via-lavender to-illusion text-justify rounded-3xl p-14">
+          <p className="text-4xl">
+            {languageBasedDisplay(
+              configLanguage(
+                `Chúng tôi luôn cố gắng tạo ra những chương trình bổ ích, thực tế qua
+              đó giúp bạn có được những trải nghiệm tuyệt vời nhất`,
+                `We always try to create useful and practical programs through which 
+              to help you get the best experience.`
+              ),
+              languageContext.lang
+            )}
+          </p>
+        </section>
+      </article>
       <article className="pt-32 py-5 bg-black">
-        <h3 className="text-center text-5xl leading-tight sm:leading-none px-2 lg:px-0 font-semibold text-gray-50">
+        <h3 className="text-center text-5xl leading-tight sm:leading-none px-5 lg:px-0 font-semibold text-gray-50">
           {languageBasedDisplay(
             configLanguage(
               `Đôi Lời Chia Sẻ Từ Những Nhà Sáng Lập`,
@@ -302,86 +477,15 @@ function Homepage({ history }) {
           ))}
         </Slider>
       </article>
-      <article className="px-2 pt-2 lg:grid lg:grid-cols-2 lg:gap-2 lg:items-center">
-        {Object.keys(contents.programs).map((key, index) => (
-          <section key={index} className="relative group mb-2 lg:mb-0">
-            <img
-              className="w-full h-auto object-cover"
-              src={contents.programs[key].imgSrc}
-              alt={contents.programs[key].title}
-            />
-            <div
-              className="
-                flex
-                flex-col
-                justify-end
-                px-5 
-                py-4 
-                text-gray-50 
-                text-xs
-                sm:text-xl 
-                absolute 
-                top-0 
-                left-0 
-                w-full 
-                h-full 
-                transition 
-                duration-500 
-                ease-in-out 
-                opacity-0 
-                group-hover:opacity-100 
-                transform 
-                group-hover:bg-black
-                group-hover:bg-opacity-60
-              "
-            >
-              <h3 className="text-xl sm:text-5xl mb-4 font-title">
-                <strong>{contents.programs[key].title}</strong>
-              </h3>
-              <p className="text-justify">
-                {simplify(
-                  languageBasedDisplay(
-                    contents.programs[key].description,
-                    languageContext.lang
-                  ),
-                  40
-                )}
-                {" ..."}
-              </p>
-              <div className="block mt-7">
-                <Link
-                  className="hover:underline"
-                  to={contents.programs[key].link}
-                >
-                  {languageBasedDisplay(readMore, languageContext.lang)} {">"}
-                </Link>
-              </div>
-            </div>
-          </section>
-        ))}
-        <section className="text-justify lg:text-left px-10 py-10 lg:py-0 h-full flex flex-col justify-center bg-light">
-          <p className="text-2xl">
-            {languageBasedDisplay(
-              configLanguage(
-                `Chúng tôi luôn cố gắng tạo ra những chương trình bổ ích, thực tế qua
-              đó giúp bạn có được những trải nghiệm tuyệt vời nhất`,
-                `We always try to create useful and practical programs through which 
-              to help you get the best experience.`
-              ),
-              languageContext.lang
-            )}
-          </p>
-        </section>
-      </article>
       <article
-        className="mb-2"
+        className="bg-black-light"
         style={{
           backgroundImage: `url("${assetsUrl}/2020/media/homepage-secondary.png")`,
           backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundSize: "center",
         }}
       >
-        <div className="bg-black bg-opacity-60 w-full h-auto mt-2 py-32 sm:grid sm:grid-cols-2 text-gray-50">
+        <div className="bg-black bg-opacity-60 w-full h-auto py-32 sm:grid sm:grid-cols-2 text-gray-50">
           <header className="col-span-full mb-20">
             <h3 className="text-center px-2 lg:px-0 leading-tight sm:leading-none text-5xl font-semibold">
               {languageBasedDisplay(

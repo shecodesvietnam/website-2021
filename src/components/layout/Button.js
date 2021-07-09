@@ -1,24 +1,23 @@
-function Button({ children, onClick }) {
+function Button({ children, onClick, small = false }) {
   return (
     <button
-      className="
+      className={`
         outline-none
         block
-        btn 
+        ${small ? "btn-sm" : "btn"} 
         bg-gradient-to-br 
         from-malibu 
         via-lavender 
         to-illusion 
+        hover:text-gray-50
         transition 
         duration-500 
         ease-in-out 
         transform 
-        hover:text-gray-50
         hover:bg-gradient-to-br 
         hover:from-ruby 
         hover:to-governor
-        hover:scale-110
-      "
+      `}
       onClick={onClick}
     >
       {children}
