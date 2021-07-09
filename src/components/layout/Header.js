@@ -71,7 +71,7 @@ function Header({ routeMapping }) {
     <>
       <header
         id="header"
-        className="bg-black bg-opacity-95 sticky top-0 z-50 bg-blur-lg py-1 px-2 w-auto"
+        className="bg-black bg-opacity-80 bg-blur-lg sticky top-0 z-50 py-1 px-2 w-auto"
       >
         <nav className="text-xs xl:text-base hidden lg:w-11/12 xl:w-10/12 lg:mx-auto lg:flex lg:items-center lg:justify-between">
           {renderLogo(
