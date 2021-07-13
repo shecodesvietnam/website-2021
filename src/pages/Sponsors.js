@@ -136,7 +136,7 @@ const partners = [
 ];
 
 function Sponsors() {
-  console.log(partners);
+  return <></>;
 }
 
 export default Sponsors;

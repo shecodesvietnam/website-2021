@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       fontFamily: {
         title: ["MajorMonoDisplay"],
-        text: ["Inconsolata"],
+        // text: ["Inconsolata"],
+        // text: ["Futura"],
+        text: ["SFProDisplay"],
       },
       colors: {
         malibu: "#55a9dd",

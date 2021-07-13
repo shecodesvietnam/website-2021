@@ -22,7 +22,7 @@ export const contents = {
   programs: {
     hackathon: {
       imgSrc: `${assetsUrl}/2021/homepage/DSC06434.JPG`,
-      title: "HACKATHON",
+      title: "Hackathon",
       description: configLanguage(
         `SheCodes Hackathon là hackathon đầu tiên dành riêng cho phái nữ tại Việt Nam, 
       với mục tiêu phá vỡ rào cản công nghệ gần với cuộc sống và cung cấp một sân chơi 
@@ -45,7 +45,7 @@ export const contents = {
     },
     techMarathon: {
       imgSrc: `${assetsUrl}/2021/homepage/YUE_79751.jpg`,
-      title: "TECH MARATHON",
+      title: "Tech Marathon",
       description: configLanguage(
         `Tech Marathon là chuỗi các lớp học "crash course" dành cho những người chưa có 
       kinh nghiệm lập trình, tập trung vào hai mảng: Kỹ năng lập trình (Technical 
@@ -63,7 +63,7 @@ export const contents = {
     },
     talentConnector: {
       imgSrc: `${assetsUrl}/2021/homepage/IMG_6201.JPG`,
-      title: "TALENT CONNECTOR",
+      title: "Talent Connector",
       description: configLanguage(
         `Với mục tiêu đẩy mạnh sự đa dạng và thu hẹp khoảng cách giới tính trong lĩnh 
       vực công nghệ, chương trình SheCodes Talent Connector ra đời nhằm kết nối các 
@@ -82,7 +82,7 @@ export const contents = {
     },
     mentorship: {
       imgSrc: `${assetsUrl}/2021/homepage/DSC06806.JPG`,
-      title: "MENTORSHIP",
+      title: "Mentorship",
       description: configLanguage(
         `Chương trình SheCodes Mentorship được xây dựng để giúp các bạn nữ (mentees) 
       phát triển kiến thức, kỹ năng chuyên môn và cơ hội nghề nghiệp trong lĩnh vực 
@@ -100,7 +100,7 @@ export const contents = {
     },
     webinar: {
       imgSrc: `${assetsUrl}/2021/homepage/IMG_6193.JPG`,
-      title: "WEBINAR",
+      title: "Webinar",
       description: configLanguage(
         `Webinar là chuỗi các hội thảo được tổ chức trực tuyến nhằm cung cấp cho các 
       bạn cái nhìn cụ thể về các ngành nghề trong lĩnh vực công nghệ. Mỗi Webinar 

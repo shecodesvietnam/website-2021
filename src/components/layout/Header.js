@@ -44,6 +44,10 @@ function Header({ routeMapping }) {
       createLink(
         index,
         `mx-auto
+        text-xl
+        mb-2
+        lg:text-xs
+        xl:text-sm
         text-gray-300 
         transition 
         duration-500 

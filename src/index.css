@@ -17,6 +17,16 @@
     src: url(./fonts/Inconsolata-VariableFont.ttf) format("truetype");
   }
 
+  @font-face {
+    font-family: Futura;
+    src: url(./fonts/Futura.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: SFProDisplay;
+    src: url(./fonts/SFProDisplay.ttf) format("truetype");
+  }
+
   .sticky {
     position: -webkit-sticky;
     position: sticky;

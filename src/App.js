@@ -73,8 +73,8 @@ function App() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-      <Router basename="/">
-        <div className="relative font-text w-auto bg-black">
+      <Router>
+        <div className="relative font-text tracking-wider w-auto bg-black">
           <Header routeMapping={mainRouteMapping} />
           <main>
             <Switch>

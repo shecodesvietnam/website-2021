@@ -13,30 +13,30 @@ const classBuildingProgress = [
   `${assetsUrl}/2021/tm/93060859_656191435162255_5702867140520968192_n.jpg`,
 ];
 
-const contact = {
-  name: configLanguage("Nguyễn Vũ Ngân Hà", "Nguyen Vu Ngan Ha"),
-  img: {
-    src: `${assetsUrl}/2021/tm/nganha.png`,
-    alt: "Nguyen Vu Ngan Ha, the Program Manager",
-  },
-  phone: "0356640776",
-  email: "hanguyen.shecodes@gmail.com",
-};
+// const contact = {
+//   name: configLanguage("Nguyễn Vũ Ngân Hà", "Nguyen Vu Ngan Ha"),
+//   img: {
+//     src: `${assetsUrl}/2021/tm/nganha.png`,
+//     alt: "Nguyen Vu Ngan Ha, the Program Manager",
+//   },
+//   phone: "0356640776",
+//   email: "hanguyen.shecodes@gmail.com",
+// };
 
 function TechMarathon() {
   const languageContext = useContext(LanguageContext);
 
   return (
     <>
-      <article className="bg-black px-2 lg:px-20 xl:px-28 py-16">
+      <article className="bg-black px-2 lg:px-20 xl:px-28 pt-16 pb-28">
         <header className="mb-16 mt-10 text-gray-50">
-          <h2 className="text-center font-title">
-            <span className="block tracking-widest mb-3 text-4xl sm:text-6xl font-title">
+          <h2 className="text-center">
+            <span className="block mb-3 text-4xl sm:text-6xl font-semibold">
               {contents.programs.techMarathon.title}
             </span>
           </h2>
         </header>
-        <p className="text-gray-50 text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
+        <p className="text-gray-50 text-xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
           {languageBasedDisplay(
             contents.programs.techMarathon.description,
             languageContext.lang
@@ -44,10 +44,11 @@ function TechMarathon() {
         </p>
       </article>
       <article className="bg-black px-5 sm:px-14 py-16 sm:pt-24 sm:pb-5">
-        <section className="bg-black-light px-20 py-24">
+        <section className="bg-black-light md:px-5 lg:px-20 py-24">
           <div className="grid grid-cols-5 gap-3 items-center">
             {classBuildingProgress.map((step, index) => (
               <div
+                key={index}
                 className={`transform ${
                   index % 2 === 0 ? "-translate-y-5" : "translate-y-5"
                 }`}

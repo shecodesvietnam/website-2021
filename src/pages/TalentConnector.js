@@ -11,13 +11,13 @@ function TalentConnector() {
     <>
       <article className="bg-black px-2 lg:px-20 xl:px-28 py-16">
         <header className="mb-16 mt-10 text-gray-50">
-          <h2 className="text-center font-title">
-            <span className="block tracking-widest mb-3 text-4xl sm:text-6xl font-title">
+          <h2 className="text-center">
+            <span className="block mb-3 text-4xl sm:text-6xl font-semibold">
               {contents.programs.talentConnector.title}
             </span>
           </h2>
         </header>
-        <p className="text-gray-50 text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
+        <p className="text-gray-50 text-xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
           {languageBasedDisplay(
             contents.programs.talentConnector.description,
             languageContext.lang

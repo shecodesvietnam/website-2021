@@ -16,11 +16,11 @@ function Homepage({ history }) {
     <>
       <article className="bg-black px-2 lg:px-20 xl:px-28 py-16">
         <header className="mb-16 mt-10 text-gray-50">
-          <h2 className="text-center font-title">
-            <span className="block tracking-widest mb-3 text-4xl sm:text-6xl font-title">
+          <h2 className="text-center">
+            <span className="block mb-3 font-semibold text-6xl">
               SheCodes Vietnam
             </span>
-            <span className="block leading-tight text-2xl sm:text-4xl">
+            <span className="block text-2xl sm:text-4xl">
               {languageBasedDisplay(
                 contents.intro.header.subtitle,
                 languageContext.lang
@@ -28,7 +28,7 @@ function Homepage({ history }) {
             </span>
           </h2>
         </header>
-        <p className="text-gray-50 text-2xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
+        <p className="text-gray-50 text-xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
           {languageBasedDisplay(
             contents.intro.description,
             languageContext.lang
@@ -58,7 +58,7 @@ function Homepage({ history }) {
             />
             <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
               <div className="text-gray-50 w-1/3 pl-5 pt-6">
-                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4">
                   <strong>{contents.programs.hackathon.title}</strong>
                 </h3>
                 <p className="text-justify text-lg hidden lg:block">
@@ -87,7 +87,7 @@ function Homepage({ history }) {
             />
             <div className="flex flex-col md:flex-row justify-end md:text-right absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
               <div className="text-gray-50 w-1/2 pl-5 md:pr-5 pb-6 md:pt-6">
-                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4">
                   <strong>{contents.programs.mentorship.title}</strong>
                 </h3>
                 <p className="text-justify text-lg hidden lg:block">
@@ -116,7 +116,7 @@ function Homepage({ history }) {
             />
             <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
               <div className="text-gray-50 px-5 pt-6">
-                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4">
                   <strong>{contents.programs.techMarathon.title}</strong>
                 </h3>
                 <p className="text-justify text-lg hidden lg:block">
@@ -145,7 +145,7 @@ function Homepage({ history }) {
             />
             <div className="flex flex-col justify-end absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
               <div className="text-gray-50 px-5 pb-6">
-                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4">
                   <strong>{contents.programs.webinar.title}</strong>
                 </h3>
                 <p className="text-justify text-lg hidden lg:block">
@@ -174,7 +174,7 @@ function Homepage({ history }) {
             />
             <div className="flex flex-col justify-end absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-60 rounded-3xl">
               <div className="text-gray-50 w-1/2 pl-5 pb-6">
-                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4 font-title">
+                <h3 className="text-xl sm:text-4xl lg:text-5xl mb-1 sm:mb-4">
                   <strong>{contents.programs.talentConnector.title}</strong>
                 </h3>
                 <p className="text-justify text-lg hidden lg:block">
@@ -225,7 +225,7 @@ function Homepage({ history }) {
               />
               <div id="tien">
                 <blockquote className="mb-4 text-lg lg:text-xl xl:text-2xl">
-                  <p className="text-gray-50">
+                  <p className="text-gray-50 leading-normal">
                     {languageBasedDisplay(
                       contents.founderQuotes.tien.text,
                       languageContext.lang
@@ -248,7 +248,7 @@ function Homepage({ history }) {
             <div className="grid grid-cols-2 items-center">
               <div>
                 <blockquote className="mb-4 text-lg lg:text-xl xl:text-2xl">
-                  <p className="text-gray-50">
+                  <p className="text-gray-50 leading-normal">
                     {languageBasedDisplay(
                       contents.founderQuotes.my.text,
                       languageContext.lang
@@ -281,7 +281,7 @@ function Homepage({ history }) {
               />
               <div>
                 <blockquote className="mb-4 text-lg lg:text-xl xl:text-2xl">
-                  <p className="text-gray-50">
+                  <p className="text-gray-50 leading-normal">
                     {languageBasedDisplay(
                       contents.founderQuotes.ha.text,
                       languageContext.lang
@@ -313,7 +313,7 @@ function Homepage({ history }) {
             <figure key={index} className="text-justify">
               <div className="py-12 px-6">
                 <blockquote className="mb-4 text-2xl">
-                  <p className="text-gray-50">
+                  <p className="text-gray-50 leading-normal">
                     {languageBasedDisplay(
                       contents.founderQuotes[key].text,
                       languageContext.lang

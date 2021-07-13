@@ -1,3 +1,5 @@
-function Blog() {}
+function Blog() {
+  return <></>;
+}
 
 export default Blog;
