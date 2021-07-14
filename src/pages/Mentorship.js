@@ -1,12 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
+import { toast } from "react-toastify";
+import * as Yup from "yup";
 
 import LanguageContext from "../contexts/Language";
-import { assetsUrl } from "./../config.json";
+import { assetsUrl, mentorshipRegistrationSysUrl } from "./../config.json";
 import { configLanguage, languageBasedDisplay } from "./../utils/language";
-import { contents } from "./contents";
 import Button from "./../components/layout/Button";
 
 const features = [
@@ -30,54 +32,91 @@ const features = [
 
 function Mentorship() {
   const languageContext = useContext(LanguageContext);
+  const [loading, setLoading] = useState(false);
+
   const {
     handleSubmit,
     handleBlur,
     handleChange,
-    values: { name, email, workOrSchool, positionOrMajor },
+    values: { name, email, companyOrSchool, positionOrMajor },
+    errors,
+    touched,
   } = useFormik({
     initialValues: {
       email: "",
       name: "",
-      workOrSchool: "",
+      companyOrSchool: "",
       positionOrMajor: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    validationSchema: Yup.object().shape({
+      email: Yup.string().email().required(),
+      name: Yup.string().min(2).max(25).required(),
+      companyOrSchool: Yup.string().min(5).max(100).required(),
+      positionOrMajor: Yup.string().min(5).max(100).required(),
+    }),
+    onSubmit: async (values) => {
+      setLoading(true);
+      const data = {};
+
+      data.email = values.email;
+      data.name = values.name;
+      data.company_or_school = values.companyOrSchool;
+      data.position_or_major = values.positionOrMajor;
+
+      console.log(data);
+
+      try {
+        await axios.post(
+          `${mentorshipRegistrationSysUrl}/api/registrations`,
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        toast.success(
+          languageBasedDisplay(
+            configLanguage(
+              "Thông tin của bạn đã được lưu thành công",
+              "Your information has been registered"
+            ),
+            languageContext.lang
+          )
+        );
+      } catch (exc) {
+        toast.error(
+          languageBasedDisplay(
+            configLanguage(
+              "Có lỗi xảy ra trong quá trình đăng ký, xin bạn vui lòng liên hệ với chúng tôi để được hỗ trợ!",
+              "An error has occurred, please contact to us to get supports!"
+            ),
+            languageContext.lang
+          )
+        );
+      } finally {
+        setLoading(false);
+      }
     },
   });
 
   return (
     <>
-      <article className="bg-black h-full px-2 lg:px-20 xl:px-28 pt-16 pb-28">
-        <header className="mb-16 mt-10 text-gray-50">
-          <h2 className="text-center">
-            <span className="block mb-3 text-4xl sm:text-6xl font-semibold">
-              {contents.programs.mentorship.title}
-            </span>
-          </h2>
-        </header>
-        <p className="text-gray-50 text-xl text-justify px-5 w-full xl:w-3/4 2xl:w-2/3 mx-auto">
-          {languageBasedDisplay(
-            contents.programs.mentorship.description,
-            languageContext.lang
-          )}
-        </p>
+      <article
+        className="bg-black relative h-screen"
+        style={{
+          backgroundImage: `url("${assetsUrl}/2021/mentorship/IMG_5889.JPG")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <h2 className="flex flex-col bg-black bg-opacity-70 px-2 justify-center absolute top-0 left-0 h-full w-full text-gray-50 text-center text-3xl sm:text-5xl font-semibold">
+          Find a mentor who believes in you, your life will change forever
+        </h2>
       </article>
       <article className="bg-black-light px-5 sm:px-14 py-16 sm:py-24">
-        <section className="relative rounded-3xl">
-          <img
-            className="block rounded-3xl min-h-full"
-            src={`${assetsUrl}/2021/mentorship/landing.jpeg`}
-            alt="Mentored"
-          />
-          <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-black bg-opacity-60 z-40" />
-        </section>
-        <section className="mt-24 md:mt-44">
-          <h3 className="text-gray-50 text-center text-3xl sm:text-5xl font-semibold">
-            Find a mentor who believes in you, your life will change forever
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 px-2 sm:px-14 lg:px-32 mt-20 text-xl">
+        <section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 px-2 sm:px-14 lg:px-32 text-xl">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start text-gray-50">
                 <FontAwesomeIcon icon={faCheck} />
@@ -105,10 +144,12 @@ function Mentorship() {
         >
           <div className="mb-10 mt-16">
             <label htmlFor="email" className="block text-sm font-bold mb-2">
-              Email
+              Email *
             </label>
             <input
-              className="bg-transparent appearance-none border border-gray-800 focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none"
+              className={`block bg-transparent appearance-none border border-gray-800 ${
+                errors.email && touched.email && "border-red-600"
+              } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
               id="email"
               name="email"
               onChange={handleChange}
@@ -121,10 +162,13 @@ function Mentorship() {
               {languageBasedDisplay(
                 configLanguage("Họ Tên", "Full Name"),
                 languageContext.lang
-              )}
+              )}{" "}
+              *
             </label>
             <input
-              className="bg-transparent appearance-none border border-gray-800 focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              className={`block bg-transparent appearance-none border border-gray-800 ${
+                errors.name && touched.name && "border-red-600"
+              } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
               id="name"
               name="name"
               onChange={handleChange}
@@ -134,21 +178,26 @@ function Mentorship() {
           </div>
           <div className="mb-10">
             <label
-              htmlFor="workOrSchool"
+              htmlFor="companyOrSchool"
               className="block text-sm font-bold mb-2"
             >
               {languageBasedDisplay(
                 configLanguage("Trường học/Công ty làm việc", "School/Company"),
                 languageContext.lang
-              )}
+              )}{" "}
+              *
             </label>
             <input
-              className="bg-transparent appearance-none border border-gray-800 focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="workOrSchool"
-              name="workOrSchool"
+              className={`block bg-transparent appearance-none border border-gray-800 ${
+                errors.companyOrSchool &&
+                touched.companyOrSchool &&
+                "border-red-600"
+              } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
+              id="companyOrSchool"
+              name="companyOrSchool"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={workOrSchool}
+              value={companyOrSchool}
             />
           </div>
           <div className="mb-10">
@@ -159,10 +208,15 @@ function Mentorship() {
               {languageBasedDisplay(
                 configLanguage("Vị trí làm việc/Ngành học", "Position/Major"),
                 languageContext.lang
-              )}
+              )}{" "}
+              *
             </label>
             <input
-              className="bg-transparent appearance-none border border-gray-800 focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              className={`block bg-transparent appearance-none border border-gray-800 ${
+                errors.positionOrMajor &&
+                touched.positionOrMajor &&
+                "border-red-600"
+              } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
               id="positionOrMajor"
               name="positionOrMajor"
               onChange={handleChange}
@@ -170,14 +224,38 @@ function Mentorship() {
               value={positionOrMajor}
             />
           </div>
+          <div className="mb-10">
+            <p>
+              (*){" "}
+              {languageBasedDisplay(
+                configLanguage("Bắt buộc", "Required"),
+                languageContext.lang
+              )}
+            </p>
+          </div>
           <div className="flex justify-center">
-            <Button type="submit" className="px-7">
+            <Button
+              type="submit"
+              className={`px-7 ${loading ? "disabled:opacity-50" : ""}`}
+              disabled={loading}
+            >
               {languageBasedDisplay(
                 configLanguage("Gửi", "Submit"),
                 languageContext.lang
               )}
             </Button>
           </div>
+          {loading && (
+            <p className="mt-5 text-center">
+              {languageBasedDisplay(
+                configLanguage(
+                  "Quá trình đăng ký có thể lên đến 2-3 phút, xin bạn vui lòng đợi!",
+                  "The registration process might take up to 2-3 minutes, please wait!"
+                ),
+                languageContext.lang
+              )}
+            </p>
+          )}
         </form>
       </article>
     </>

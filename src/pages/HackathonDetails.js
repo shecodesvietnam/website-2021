@@ -1,6 +1,6 @@
-const details = {
-  2021: {},
-};
+// const details = {
+//   2021: {},
+// };
 
 function HackathonDetails() {
   return <></>;

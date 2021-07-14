@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import LanguageContext from "./contexts/Language";
 import Homepage from "./pages/Homepage";
@@ -76,6 +78,7 @@ function App() {
       <Router>
         <div className="relative font-text tracking-wider w-auto bg-black">
           <Header routeMapping={mainRouteMapping} />
+          <ToastContainer />
           <main>
             <Switch>
               {Object.keys(mainRouteMapping).map(function map(obj, index) {

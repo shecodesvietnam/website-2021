@@ -191,7 +191,7 @@ function Homepage({ history }) {
             </div>
           </Link>
         </section>
-        <section className="text-gray-800 col-span-4 xl:col-span-3 bg-gradient-to-br from-malibu via-lavender to-illusion text-justify rounded-3xl p-14">
+        <section className="text-gray-800 col-span-4 xl:col-span-3 bg-gradient-to-br from-malibu via-lavender to-illusion text-left sm:text-justify rounded-3xl p-14">
           <p className="text-xl sm:text-4xl">
             {languageBasedDisplay(
               configLanguage(
@@ -310,7 +310,7 @@ function Homepage({ history }) {
           className="block md:hidden w-5/6 lg:w-3/4 mx-auto"
         >
           {Object.keys(contents.founderQuotes).map((key, index) => (
-            <figure key={index} className="text-justify">
+            <figure key={index}>
               <div className="py-12 px-6">
                 <blockquote className="mb-4 text-2xl">
                   <p className="text-gray-50 leading-normal">
@@ -339,7 +339,7 @@ function Homepage({ history }) {
         style={{
           backgroundImage: `url("${assetsUrl}/2020/media/homepage-secondary.png")`,
           backgroundPosition: "center",
-          backgroundSize: "center",
+          backgroundSize: "cover",
         }}
       >
         <div className="bg-black bg-opacity-60 w-full h-auto py-32 sm:grid sm:grid-cols-2 text-gray-50">
