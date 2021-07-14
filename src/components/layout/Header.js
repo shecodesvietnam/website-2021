@@ -154,15 +154,6 @@ function Header({ routeMapping }) {
             </div>
           </div>
         </nav>
-        <aside className="text-gray-50 bg-black-light text-center p-2 text-lg">
-          {languageBasedDisplay(
-            configLanguage(
-              "Website đang trong quá trình xây dựng!",
-              "The Website is under development!"
-            ),
-            languageContext.lang
-          )}
-        </aside>
       </header>
     </>
   );
