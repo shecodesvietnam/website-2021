@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "video-react/dist/video-react.css";
 
 import LanguageContext from "./contexts/Language";
 import Homepage from "./pages/Homepage";

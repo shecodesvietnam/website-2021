@@ -38,19 +38,21 @@ function Mentorship() {
     handleSubmit,
     handleBlur,
     handleChange,
-    values: { name, email, companyOrSchool, positionOrMajor },
+    values: { name, email, age, companyOrSchool, positionOrMajor },
     errors,
     touched,
   } = useFormik({
     initialValues: {
       email: "",
       name: "",
+      age: 0,
       companyOrSchool: "",
       positionOrMajor: "",
     },
     validationSchema: Yup.object().shape({
       email: Yup.string().email().required(),
       name: Yup.string().min(2).max(25).required(),
+      age: Yup.number().min(0).required(),
       companyOrSchool: Yup.string().min(5).max(100).required(),
       positionOrMajor: Yup.string().min(5).max(100).required(),
     }),
@@ -60,6 +62,7 @@ function Mentorship() {
 
       data.email = values.email;
       data.name = values.name;
+      data.age = values.age;
       data.company_or_school = values.companyOrSchool;
       data.position_or_major = values.positionOrMajor;
 
@@ -158,25 +161,49 @@ function Mentorship() {
               required
             />
           </div>
-          <div className="mb-10">
-            <label htmlFor="name" className="block text-sm font-bold mb-2">
-              {languageBasedDisplay(
-                configLanguage("Họ Tên", "Full Name"),
-                languageContext.lang
-              )}{" "}
-              *
-            </label>
-            <input
-              className={`block bg-transparent appearance-none border border-gray-800 ${
-                errors.name && touched.name && "border-red-600"
-              } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
-              id="name"
-              name="name"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={name}
-              required
-            />
+          <div className="mb-10 grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-bold mb-2">
+                {languageBasedDisplay(
+                  configLanguage("Họ Tên", "Full Name"),
+                  languageContext.lang
+                )}{" "}
+                *
+              </label>
+              <input
+                className={`block bg-transparent appearance-none border border-gray-800 ${
+                  errors.name && touched.name && "border-red-600"
+                } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
+                id="name"
+                name="name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={name}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="age" className="block text-sm font-bold mb-2">
+                {languageBasedDisplay(
+                  configLanguage("Tuổi", "Age"),
+                  languageContext.lang
+                )}{" "}
+                *
+              </label>
+              <input
+                className={`block bg-transparent appearance-none border border-gray-800 ${
+                  errors.age && touched.age && "border-red-600"
+                } focus:border-gray-400 rounded w-full py-2 px-3 leading-tight focus:outline-none`}
+                id="age"
+                name="age"
+                type="number"
+                min={0}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={age}
+                required
+              />
+            </div>
           </div>
           <div className="mb-10">
             <label

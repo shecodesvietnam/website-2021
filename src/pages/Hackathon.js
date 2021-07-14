@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Player } from "video-react";
 
 import LanguageContext from "../contexts/Language";
 import { assetsUrl } from "./../config.json";
@@ -11,7 +12,7 @@ function Hackathon() {
 
   return (
     <>
-      <article className="bg-black px-2 lg:px-20 xl:px-28 pt-16 pb-28">
+      {/* <article className="bg-black px-2 lg:px-20 xl:px-28 pt-16 pb-28">
         <header className="mb-16 mt-10 text-gray-50">
           <h2 className="text-center">
             <span className="block mb-3 text-4xl sm:text-6xl font-semibold">
@@ -116,6 +117,14 @@ function Hackathon() {
             </div>
           </Link>
         </section>
+      </article> */}
+      <article>
+        <Player
+          fluid
+          playsInline
+          autoPlay
+          src={`${assetsUrl}/2021/hackathon/SheCodesHackathon2019.mp4`}
+        />
       </article>
     </>
   );

@@ -1,5 +1,5 @@
 {
-  "homepage": "http://shecodesvietnam.github.io/website-2021",
+  "homepage": "https://shecodesvietnam.com",
   "name": "website-2021",
   "version": "0.1.0",
   "private": true,
@@ -28,6 +28,7 @@
     "slick-carousel": "^1.8.1",
     "tailwind-filter-utilities": "^2.0.0",
     "tailwindcss-debug-screens": "^2.0.0",
+    "video-react": "^0.14.1",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
   },

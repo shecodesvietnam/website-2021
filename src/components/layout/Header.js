@@ -75,9 +75,9 @@ function Header({ routeMapping }) {
     <>
       <header
         id="header"
-        className="bg-black bg-opacity-80 bg-blur-lg sticky top-0 z-50 py-1 px-2 w-auto"
+        className="bg-black bg-opacity-80 bg-blur-lg sticky top-0 z-50 py-1 w-auto"
       >
-        <nav className="text-xs xl:text-base hidden lg:w-11/12 xl:w-10/12 lg:mx-auto lg:flex lg:items-center lg:justify-between">
+        <nav className="text-xs xl:text-base hidden px-2 lg:w-11/12 xl:w-10/12 lg:mx-auto lg:flex lg:items-center lg:justify-between">
           {renderLogo(
             "block w-32 transition duration-500 ease-in-out transform hover:scale-110 mr-10"
           )}
@@ -154,6 +154,15 @@ function Header({ routeMapping }) {
             </div>
           </div>
         </nav>
+        <aside className="text-gray-50 bg-black-light text-center p-2 text-lg">
+          {languageBasedDisplay(
+            configLanguage(
+              "Website đang trong quá trình xây dựng!",
+              "The Website is under development!"
+            ),
+            languageContext.lang
+          )}
+        </aside>
       </header>
     </>
   );
