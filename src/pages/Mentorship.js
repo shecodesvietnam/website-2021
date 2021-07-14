@@ -155,6 +155,7 @@ function Mentorship() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={email}
+              required
             />
           </div>
           <div className="mb-10">
@@ -174,6 +175,7 @@ function Mentorship() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={name}
+              required
             />
           </div>
           <div className="mb-10">
@@ -198,6 +200,7 @@ function Mentorship() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={companyOrSchool}
+              required
             />
           </div>
           <div className="mb-10">
@@ -222,6 +225,7 @@ function Mentorship() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={positionOrMajor}
+              required
             />
           </div>
           <div className="mb-10">
