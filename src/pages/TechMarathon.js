@@ -229,7 +229,7 @@ function TechMarathon() {
             ))}
           </Slider>
           <h3 className="text-gray-800 text-center mt-14 md:mt-20 px-2">
-            <span className="block font-semibold text-5xl">
+            <span className="block font-semibold text-3xl sm:text-5xl">
               {languageBasedDisplay(
                 configLanguage(
                   "Quy Trình Tạo Ra Lớp Học",

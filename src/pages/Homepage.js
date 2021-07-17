@@ -38,7 +38,10 @@ function Homepage({ history }) {
           <Button>
             <Link to="/hackathon/2021">
               {languageBasedDisplay(
-                configLanguage("Tham gia Hackathon", "Join Hackathon"),
+                configLanguage(
+                  "Tham gia Hackathon 2021",
+                  "Join Hackathon 2021"
+                ),
                 languageContext.lang
               )}
             </Link>
