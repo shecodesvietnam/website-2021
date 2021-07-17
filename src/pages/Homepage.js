@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
-import LanguageContext from "./../contexts/Language";
-import { assetsUrl } from "./../config.json";
-import { configLanguage, languageBasedDisplay } from "./../utils/language";
-import { simplify } from "./../utils/text";
-import Button from "./../components/layout/Button";
+import LanguageContext from "../contexts/Language";
+import { assetsUrl } from "../config.json";
+import { configLanguage, languageBasedDisplay } from "../utils/language";
+import { simplify } from "../utils/text";
+import Button from "../components/layout/Button";
 import { contents } from "./contents";
 
 function Homepage({ history }) {

@@ -23,10 +23,11 @@ function TalentConnector() {
             languageContext.lang
           )}
         </p>
-        <p className="text-gray-50 flex justify-center text-6xl mt-16 pb-12">
+        <p className="text-gray-50 flex justify-center text-4xl mt-16 pb-12">
           {languageBasedDisplay(comingSoon, languageContext.lang)}
         </p>
       </article>
+      <article className="h-32 bg-black"></article>
     </>
   );
 }

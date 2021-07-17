@@ -9,7 +9,7 @@ function Footer({ secondaryRouteMapping }) {
   const routeMappingKeys = Object.keys(secondaryRouteMapping);
 
   return (
-    <footer className="bg-black-xlight py-2 px-2 w-auto text-gray-400">
+    <footer className="bg-black-xlight py-2 px-2 w-auto text-gray-400 relative z-50">
       <div className="lg:w-11/12 xl:w-10/12 lg:mx-auto lg:flex lg:flex-row-reverse lg:justify-between">
         <nav>
           <ul className="flex justify-center mb-5 lg:mb-0 lg:justify-end">

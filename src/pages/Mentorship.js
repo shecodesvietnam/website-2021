@@ -13,20 +13,20 @@ import Button from "./../components/layout/Button";
 
 const features = [
   configLanguage(
-    "Lựu chọn mentor 1-1 có trải nghiệm và background phù hợp với nhu cầu của bạn",
-    "Lựu chọn mentor 1-1 có trải nghiệm và background phù hợp với nhu cầu của bạn"
+    "Lựa chọn mentor 1-1 có trải nghiệm và background phù hợp với nhu cầu của bạn",
+    "Select a one-on-one mentor with the right experience and background to suit your needs"
   ),
   configLanguage(
     "Nhận lời khuyên về lộ trình hướng nghiệp, các kỹ năng cần chuẩn bị, ...",
-    "Nhận lời khuyên về lộ trình hướng nghiệp, các kỹ năng cần chuẩn bị, ..."
+    "Get advice on career paths, skills to prepare,..."
   ),
   configLanguage(
     "Được chia sẻ về cách tự học và phát triền trong lĩnh vực mà bạn mong muốn",
-    "Được chia sẻ về cách tự học và phát triền trong lĩnh vực mà bạn mong muốn"
+    "Share about how to self-study and develop in the field you want"
   ),
   configLanguage(
     "Liên lạc với mentor linh hoạt, không ràng buộc về thời gian",
-    "Liên lạc với mentor linh hoạt, không ràng buộc về thời gian"
+    "Contact with a flexible mentor, no time constraints"
   ),
 ];
 
@@ -113,8 +113,14 @@ function Mentorship() {
           backgroundSize: "cover",
         }}
       >
-        <h2 className="flex flex-col bg-black bg-opacity-70 px-2 justify-center absolute top-0 left-0 h-full w-full text-gray-50 text-center text-3xl sm:text-5xl font-semibold">
-          Find a mentor who believes in you, your life will change forever
+        <h2 className="flex flex-col bg-black bg-opacity-70 px-10 sm:px-24 md:px-56 lg:px-60 xl:px-64 2xl:px-72 justify-center absolute top-0 left-0 h-full w-full text-gray-50 text-3xl sm:text-5xl font-semibold">
+          {languageBasedDisplay(
+            configLanguage(
+              "Tìm một người mentor tin tưởng vào bạn, và cuộc đời bạn có thể thay đổi mãi mãi!",
+              "Find a mentor who believes in you, your life will change forever"
+            ),
+            languageContext.lang
+          )}
         </h2>
       </article>
       <article className="bg-black-light px-5 sm:px-14 py-16 sm:py-24">

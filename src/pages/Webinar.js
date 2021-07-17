@@ -24,11 +24,8 @@ function Webinar() {
           )}
         </p>
       </article>
-      <article className="bg-black-light"></article>
-      <article className="h-60 bg-black"></article>
-      <article className="h-60 bg-black"></article>
-      <article className="h-60 bg-black"></article>
-      <article className="h-60 bg-black"></article>
+      <article className="h-32 bg-black"></article>
+      <article className="h-32 bg-black"></article>
     </>
   );
 }

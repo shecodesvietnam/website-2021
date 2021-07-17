@@ -81,7 +81,7 @@ function Header({ routeMapping }) {
           {renderLogo(
             "block w-32 transition duration-500 ease-in-out transform hover:scale-110 mr-10"
           )}
-          <ul className="flex justify-center">
+          <ul className="flex items-center justify-center">
             {routeMappingKeys
               .slice(1, routeMappingKeys.slice(1).length)
               .map(map("mr-5"))}

@@ -10,7 +10,7 @@ function Button({
       className={`
         outline-none
         block
-        text-black
+        text-gray-800
         ${small ? "btn-sm" : "btn"} 
         bg-gradient-to-br 
         from-malibu 

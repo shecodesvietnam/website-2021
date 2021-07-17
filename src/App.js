@@ -63,12 +63,12 @@ const secondaryRouteMapping = {
     Contact,
     configLanguage("Liên hệ", "Contact")
   ),
-  blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
-  members: configRoute(
-    "/members",
-    Members,
-    configLanguage("Thành viên", "Members")
-  ),
+  // blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
+  // members: configRoute(
+  //   "/members",
+  //   Members,
+  //   configLanguage("Thành viên", "Members")
+  // ),
 };
 
 function App() {
