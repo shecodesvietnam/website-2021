@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "video-react/dist/video-react.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import LanguageContext from "./contexts/Language";
 import Homepage from "./pages/Homepage";
@@ -75,46 +76,52 @@ const secondaryRouteMapping = {
 
 function App() {
   const [lang, setLang] = useState("vn");
+  const location = useLocation();
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-      <Router>
-        <div className="relative font-text tracking-wider w-auto bg-black">
-          <Header routeMapping={mainRouteMapping} />
-          <ToastContainer />
-          <main>
-            <Switch>
-              {Object.keys(mainRouteMapping).map(function map(obj, index) {
-                return (
-                  <Route
-                    key={index}
-                    path={mainRouteMapping[obj].route}
-                    component={mainRouteMapping[obj].component}
-                    exact
-                  />
-                );
-              })}
-              {Object.keys(secondaryRouteMapping).map(function map(obj, index) {
-                return (
-                  <Route
-                    key={index}
-                    path={secondaryRouteMapping[obj].route}
-                    component={secondaryRouteMapping[obj].component}
-                    exact
-                  />
-                );
-              })}
-              <Route
-                path="/hackathon/:year"
-                exact
-                component={HackathonDetails}
-              />
-              <Route path="/blog/:postId" exact component={BlogDetails} />
-            </Switch>
-          </main>
-          <Footer secondaryRouteMapping={secondaryRouteMapping} />
-        </div>
-      </Router>
+      <div className="relative font-text tracking-wider w-auto bg-black">
+        <Header routeMapping={mainRouteMapping} />
+        <ToastContainer />
+        <main>
+          <TransitionGroup>
+            <CSSTransition key={location.key} timeout={300} classNames="fade">
+              <Switch location={location}>
+                {Object.keys(mainRouteMapping).map(function map(obj, index) {
+                  return (
+                    <Route
+                      key={index}
+                      path={mainRouteMapping[obj].route}
+                      component={mainRouteMapping[obj].component}
+                      exact
+                    />
+                  );
+                })}
+                {Object.keys(secondaryRouteMapping).map(function map(
+                  obj,
+                  index
+                ) {
+                  return (
+                    <Route
+                      key={index}
+                      path={secondaryRouteMapping[obj].route}
+                      component={secondaryRouteMapping[obj].component}
+                      exact
+                    />
+                  );
+                })}
+                <Route
+                  path="/hackathon/:year"
+                  exact
+                  component={HackathonDetails}
+                />
+                <Route path="/blog/:postId" exact component={BlogDetails} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        </main>
+        <Footer secondaryRouteMapping={secondaryRouteMapping} />
+      </div>
     </LanguageContext.Provider>
   );
 }
