@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "video-react/dist/video-react.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import LanguageContext from "./contexts/Language";
 import Homepage from "./pages/Homepage";
@@ -15,6 +16,7 @@ import Webinar from "./pages/Webinar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
 import Members from "./pages/Members";
 import Sponsors from "./pages/Sponsors";
 import Header from "./components/layout/Header";
@@ -63,7 +65,7 @@ const secondaryRouteMapping = {
     Contact,
     configLanguage("Liên hệ", "Contact")
   ),
-  // blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
+  blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
   // members: configRoute(
   //   "/members",
   //   Members,
@@ -102,7 +104,12 @@ function App() {
                   />
                 );
               })}
-              <Route path="/hackathon/:year" component={HackathonDetails} />
+              <Route
+                path="/hackathon/:year"
+                exact
+                component={HackathonDetails}
+              />
+              <Route path="/blog/:postId" exact component={BlogDetails} />
             </Switch>
           </main>
           <Footer secondaryRouteMapping={secondaryRouteMapping} />

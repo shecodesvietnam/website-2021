@@ -1,4 +1,5 @@
 {
   "assetsUrl": "https://raw.githubusercontent.com/shecodesvietnam/assets/master",
-  "mentorshipRegistrationSysUrl": "https://mentorship-registration-system.herokuapp.com"
+  "mentorshipRegistrationSysUrl": "https://mentorship-registration-system.herokuapp.com",
+  "blogUrl": "https://tranquil-wave-91251.herokuapp.com/api"
 }
