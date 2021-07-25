@@ -47,4 +47,25 @@
   .z-100 {
     z-index: 100;
   }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-900;
+    border-radius: 100vh;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-700;
+  }
 }

@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "video-react/dist/video-react.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-vertical-timeline-component/style.min.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import LanguageContext from "./contexts/Language";
@@ -18,7 +19,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
-import Members from "./pages/Members";
+// import Members from "./pages/Members";
 import Sponsors from "./pages/Sponsors";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";

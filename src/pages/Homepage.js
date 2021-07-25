@@ -9,7 +9,7 @@ import { simplify } from "../utils/text";
 import Button from "../components/layout/Button";
 import { contents } from "./contents";
 
-function Homepage({ history }) {
+function Homepage() {
   const languageContext = useContext(LanguageContext);
 
   return (
@@ -209,15 +209,6 @@ function Homepage({ history }) {
         </section>
       </article>
       <article className="py-32 bg-black">
-        {/* <h3 className="text-center text-5xl leading-tight sm:leading-none px-5 lg:px-0 font-semibold text-gray-50">
-          {languageBasedDisplay(
-            configLanguage(
-              `Đôi Lời Chia Sẻ Từ Những Nhà Sáng Lập`,
-              `A Few Thoughts From Our Founders`
-            ),
-            languageContext.lang
-          )}
-        </h3> */}
         <div className="hidden md:block px-5 sm:px-14 py-16 sm:pt-24">
           <figure className="text-justify">
             <div className="grid grid-cols-2 items-center">
