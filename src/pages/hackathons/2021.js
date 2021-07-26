@@ -658,8 +658,10 @@ function Hackathon2021() {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 z-90 w-full h-screen bg-black text-gray-50 transition duration-500 ease-in-out transform ${
-          agendaOpened ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed top-0 left-0 z-90 bg-black text-gray-50 transition duration-500 ease-in-out transform ${
+          agendaOpened
+            ? "opacity-100 visible w-full h-screen"
+            : "opacity-0 invisible w-0 h-0"
         }`}
       >
         <FontAwesomeIcon

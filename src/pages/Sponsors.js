@@ -137,6 +137,26 @@ const partners = [
     imgSrc: `${assetsUrl}/2021/sponsors/yseaiLogoVer.png`,
     alt: "YSEALI",
   },
+  {
+    imgSrc: `${assetsUrl}/2021/sponsors/Chợ Tốt - Bạch Kim.png`,
+    alt: "Chợ Tốt",
+  },
+  {
+    imgSrc: `${assetsUrl}/2021/sponsors/axon delta black.png`,
+    alt: "Axon",
+  },
+  {
+    imgSrc: `${assetsUrl}/2021/sponsors/FUNiX- NTT HIỆN VẬT.png`,
+    alt: "FUNiX",
+  },
+  {
+    imgSrc: `${assetsUrl}/2021/sponsors/Netcompany_Đồng tổ chức.png`,
+    alt: "netcompany",
+  },
+  {
+    imgSrc: `${assetsUrl}/2021/sponsors/USA-Flag (trái).jpg`,
+    alt: "US Embassy",
+  },
 ];
 
 function Sponsors() {

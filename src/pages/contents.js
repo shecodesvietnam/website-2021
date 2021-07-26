@@ -150,12 +150,13 @@ export const contents = {
         alt: "Nguyen Huyen My",
       },
       text: configLanguage(
-        `Khi các bên đối tác hỏi SheCodes rằng liệu có đủ phái nữ thích công nghệ để 
-      mà thực hiện chương trình không thì câu trả lời sẽ luôn là có. Luôn có một nguồn 
-      nhân lực nữ đam mê tự học về IT, say sưa với từng dòng code, nhưng đơn giản là họ 
-      chưa tìm thấy đất dụng võ cho mình. SheCodes sẽ tạo ra một network để nữ giới 
-      phá bỏ các rào cản cá nhân và xã hội để can trường dấn thân vào lĩnh vực công 
-      nghệ này.`,
+        `Có vài câu hỏi đặt ra rằng “Tại sao SheCodes, không phải HeCodes? Các bạn 
+      có đang đánh rơi cơ hội của giới khác?”. Tại SheCodes Việt Nam, nỗ lực của 
+      chúng tôi luôn dành cho mục tiêu tôn trọng và tạo điều kiện để mỗi người được 
+      tự do làm điều mình thích dù bạn thuộc bất kỳ giới tính nào. Nhận thấy những 
+      khó khăn lớn của phái nữ khi gia nhập lĩnh vực CNTT, đội ngũ chúng tôi ở đây, 
+      cả nam và nữ, sẵn sàng hỗ trợ các bạn vượt lên trên những nỗi sợ, rào cản 
+      trong chính bản thân mình.`,
         `Some of the questions that arise are “Why SheCodes, not HeCodes? Are you 
       missing the opportunity of the other gender?” At SheCodes Vietnam, our efforts 
       are always devoted to the goal of respecting and creating conditions for 
