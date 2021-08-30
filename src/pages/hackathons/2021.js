@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import { faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons/faChalkboardTeacher";
@@ -25,6 +25,7 @@ import Button from "../../components/layout/Button";
 import { assetsUrl } from "./../../config.json";
 import { contents } from "./../contents";
 import { configLanguage, languageBasedDisplay } from "./../../utils/language";
+import Slider from "react-slick";
 
 const QAs = [
   {
@@ -405,12 +406,127 @@ const agenda = [
   },
 ];
 
+const guestSpeakers = [
+  {
+    name: "Thức Vũ",
+    position: "CEO of OhmniLabs",
+    img: `${assetsUrl}/2021/hackathon/gp/1539466822563.jfif`,
+  },
+  {
+    name: "Zean Võ",
+    position: "CEO of Browzzin",
+    img: `${assetsUrl}/2021/hackathon/gp/1568190654245.jfif`,
+  },
+  {
+    name: "Nina Lê",
+    position: "SWE intern at LinkedIn",
+    img: `${assetsUrl}/2021/hackathon/gp/217088464_103000168739372_4507870713065163316_n.jpg`,
+  },
+  {
+    name: "Kisten Chan",
+    position: "Data Analyst at Viettel",
+    img: `${assetsUrl}/2021/hackathon/gp/PicsArt_12-06-12.52.48.jpg`,
+  },
+  {
+    name: "Thắm Lê",
+    position: "Tech Manager at Chotot",
+    img: `${assetsUrl}/2021/hackathon/gp/1541646062859.jfif`,
+  },
+  {
+    name: "Tú Nguyễn",
+    position: "HR Manager at WorldQuant",
+    img: `${assetsUrl}/2021/hackathon/gp/1608980455499.jfif`,
+  },
+  {
+    name: "Linh Nguyễn",
+    position: "Branding and Communications Specialist at Sutunam",
+    img: `${assetsUrl}/2021/hackathon/gp/1613720652388.jfif`,
+  },
+];
+
+const judges = [
+  {
+    name: "Sylvia Lê",
+    position: "Product Manager at Axon",
+    img: `${assetsUrl}/2021/hackathon/judge/1612703632555.jfif`,
+  },
+  {
+    name: "An Tôn",
+    position: "Test Manager at Netcompany",
+    img: `${assetsUrl}/2021/hackathon/judge/1579448112367.jfif`,
+  },
+  {
+    name: "Trang Trần",
+    position: "CEO at ENOUVO",
+    img: `${assetsUrl}/2021/hackathon/judge/1627220879684.jfif`,
+  },
+  {
+    name: "Duy Trương",
+    position: "Director of Engineering at Chotot",
+    img: `${assetsUrl}/2021/hackathon/judge/1517569606825.jfif`,
+  },
+];
+
+const sponsors = [
+  {
+    name: "Axon",
+    link: "https://www.axon.com",
+    img: `${assetsUrl}/2021/sponsors/axon%20delta%20black.png`,
+    type: configLanguage("Kim Cương", "Diamond"),
+  },
+  {
+    name: "Netcompany",
+    link: "https://www.netcompany.com/",
+    img: `${assetsUrl}/2021/sponsors/Netcompany_Đồng%20tổ%20chức.png`,
+    type: configLanguage("Đồng Tổ Chức", "Co-organizer"),
+  },
+  {
+    name: "WorldQuant",
+    link: "https://www.worldquant.com",
+    img: `${assetsUrl}/2021/sponsors/WorldQuant%20Logo.png`,
+    type: configLanguage("Nhà Tài Trợ", "Sponsor"),
+  },
+  {
+    name: "Chợ tốt",
+    link: "https://www.linkedin.com/company/cho-tot-co-ltd-chotot-vn-/",
+    img: `${assetsUrl}/2021/sponsors/Chợ%20Tốt%20-%20Bạch%20Kim.png`,
+    type: configLanguage("Bạch Kim", "Platinum"),
+  },
+  {
+    name: "ĐSQ Mỹ - YSEALI",
+    link: "https://www.facebook.com/yseali/",
+    img: `${assetsUrl}/2021/sponsors/yseaiLogoVer.png`,
+    type: configLanguage("Bạch Kim", "Platinum"),
+  },
+  {
+    name: "FUNiX",
+    link: "https://www.funix.edu.vn/",
+    img: `${assetsUrl}/2021/sponsors/FUNiX-%20NTT%20HIỆN%20VẬT.png`,
+    type: configLanguage("Nhà Tài Trợ Hiện Vật", "In-kind Sponsor"),
+  },
+];
+
 function Hackathon2021() {
   const languageContext = useContext(LanguageContext);
   const [featuresOpened, setFeaturesOpened] = useState(false);
   const [newsOpened, setNewsOpened] = useState(false);
   const [qaOpened, setQAOpened] = useState(false);
   const [agendaOpened, setAgendaOpened] = useState(false);
+  const [slidesToScroll, setSlideToScroll] = useState(1);
+
+  useEffect(() => {
+    function detectResize() {
+      if (window.innerWidth >= 1024) setSlideToScroll(3);
+      else if (window.innerWidth >= 640) setSlideToScroll(2);
+      else setSlideToScroll(1);
+    }
+
+    detectResize();
+
+    window.addEventListener("resize", detectResize);
+
+    return () => window.removeEventListener("resize", detectResize);
+  }, []);
 
   return (
     <>
@@ -534,8 +650,93 @@ function Hackathon2021() {
           </button>
         </div>
       </article>
+      <article className="bg-black-light px-5 sm:px-14 py-16 sm:py-24 text-gray-50">
+        <section>
+          <h2 className="text-center text-4xl lg:text-6xl font-semibold mb-16">
+            {languageBasedDisplay(
+              configLanguage("Danh Sách Diễn Giả", "Guest Speakers"),
+              languageContext.lang
+            )}
+          </h2>
+          <Slider
+            dots={false}
+            infinite
+            speed={500}
+            slidesToShow={slidesToScroll}
+            slidesToScroll={1}
+            className="px-2 mx-2"
+          >
+            {guestSpeakers.map(({ name, position, img }, index) => (
+              <div className="mx-2 text-center rounded-3xl">
+                <img
+                  src={img}
+                  alt={name}
+                  className="rounded-full w-52 h-52 block mx-auto"
+                />
+                <h3 className="text-2xl font-semibold mt-5">{name}</h3>
+                <p>{position}</p>
+              </div>
+            ))}
+          </Slider>
+        </section>
+        <section className="mt-40">
+          <h2 className="text-center text-4xl lg:text-6xl font-semibold mb-16">
+            {languageBasedDisplay(
+              configLanguage("Danh Sách Ban Giám Khảo", "Judges"),
+              languageContext.lang
+            )}
+          </h2>
+          <Slider
+            dots={false}
+            infinite
+            speed={500}
+            slidesToShow={slidesToScroll}
+            slidesToScroll={1}
+            className="px-2 mx-2"
+          >
+            {judges.map(({ name, position, img }, index) => (
+              <div className="mx-2 text-center rounded-3xl">
+                <img
+                  src={img}
+                  alt={name}
+                  className="rounded-full w-52 h-52 block mx-auto"
+                />
+                <h3 className="text-2xl font-semibold mt-5">{name}</h3>
+                <p>{position}</p>
+              </div>
+            ))}
+          </Slider>
+        </section>
+      </article>
+      <article className="bg-black px-5 sm:px-14 py-16 sm:py-24 text-gray-50">
+        <section>
+          <h2 className="text-center text-4xl lg:text-6xl font-semibold mb-16">
+            {languageBasedDisplay(
+              configLanguage("Danh Sách Nhà Tài Trợ", "Sponsors"),
+              languageContext.lang
+            )}
+          </h2>
+          <div className="grid grid-cols-3 gap-5">
+            {sponsors.map(({ name, link, img, type }, index) => (
+              <div
+                key={index}
+                className="rounded-3xl bg-white p-2 flex flex-col justify-center items-center"
+              >
+                <a
+                  className="block w-full"
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={img} alt={name} />
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      </article>
       <article
-        className="bg-black-light w-full h-screen"
+        className="w-full h-screen"
         style={{
           backgroundImage: `url("${assetsUrl}/2020/media/hackathon-mixed.png")`,
           backgroundPosition: "center",
