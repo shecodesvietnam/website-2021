@@ -165,8 +165,8 @@ export const contents = {
       women, is ready to support you to overcome your fears and barriers.`
       ),
       fullCaption: configLanguage(
-        "Nguyễn Huyền My (Đồng sáng lập SheCodes Việt Nam)",
-        "Nguyen Huyen My (Co-Founder of SheCodes Vietnam)"
+        "Nguyễn Huyền My (Đồng sáng lập/Giám đốc điều hành SheCodes Việt Nam)",
+        "Nguyen Huyen My (Co-Founder/CEO of SheCodes Vietnam)"
       ),
     },
     ha: {
