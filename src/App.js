@@ -62,11 +62,6 @@ const secondaryRouteMapping = {
     Sponsors,
     configLanguage("Nhà tài trợ", "Sponsors")
   ),
-  contact: configRoute(
-    "/contact",
-    Contact,
-    configLanguage("Liên hệ", "Contact")
-  ),
   blog: configRoute("/blog", Blog, configLanguage("Blog", "Blog")),
   // members: configRoute(
   //   "/members",
